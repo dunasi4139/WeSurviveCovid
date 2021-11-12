@@ -4,10 +4,6 @@
 ```
 composer install
 ```
-#### Install Node Modules
-```
-npm install
-```
 
 #### Copy ENV File
 
