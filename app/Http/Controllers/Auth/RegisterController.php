@@ -4,12 +4,12 @@ namespace App\Http\Controllers\Auth;
 
 use App\Http\Controllers\Controller;
 use App\Providers\RouteServiceProvider;
-use App\Models\Dokter;
+use App\Models\User;
 use Illuminate\Foundation\Auth\RegistersUsers;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
 
-class DokterRegisterController extends Controller
+class RegisterController extends Controller
 {
     /*
     |--------------------------------------------------------------------------
@@ -41,11 +41,6 @@ class DokterRegisterController extends Controller
         $this->middleware('guest');
     }
 
-    public function showRegistrationForm()
-    {
-        return view('auth.register.dokter');
-    }
-
     /**
      * Get a validator for an incoming registration request.
      *
@@ -56,7 +51,6 @@ class DokterRegisterController extends Controller
     {
         return Validator::make($data, [
             'name' => ['required', 'string', 'max:255'],
-            'no_dokter' => 'required',
             'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
             'password' => ['required', 'string', 'min:8', 'confirmed'],
         ]);
@@ -70,12 +64,10 @@ class DokterRegisterController extends Controller
      */
     protected function create(array $data)
     {
-        return Dokter::create([
+        return User::create([
             'name' => $data['name'],
             'email' => $data['email'],
-            'no_dokter' => $data['no_dokter'],
             'password' => Hash::make($data['password']),
         ]);
     }
 }
-
