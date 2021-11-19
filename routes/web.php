@@ -1,6 +1,8 @@
 <?php
 
+use App\Http\Controllers\HomeController;
 use Illuminate\Support\Facades\Route;
+use Illuminate\Support\Facades\Auth;
 
 /*
 |--------------------------------------------------------------------------
@@ -17,6 +19,60 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+
+// Route Auth untuk login, Register dan Logout
 Auth::routes();
 
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+
+// Route Page Masyarakat
+Route::middleware(['can:isMasyrakat'])->group(function () {        
+    // Route::get('/', [HomeController::class, 'index'])->name('homepage');
+    Route::prefix('post-pengalaman')->group(function () {   
+
+    });
+    Route::prefix('artikel')->group(function () {  
+
+    });
+    Route::prefix('saran')->group(function () {  
+
+    });
+    Route::prefix('vaksinasi')->group(function () {  
+
+    });
+});
+
+// Route Page Dokter
+Route::middleware(['can:isDokter'])->group(function () {        
+    // Route::get('/', [HomeController::class, 'index'])->name('homepage');
+    Route::prefix('post-pengalaman')->group(function () {   
+
+    });
+    Route::prefix('artikel')->group(function () {  
+
+    });
+    Route::prefix('saran')->group(function () {  
+
+    });
+    Route::prefix('vaksinasi')->group(function () {  
+
+    });
+});
+
+// Route Page Admin
+Route::middleware(['can:isAdmin'])->group(function () {        
+    Route::prefix('admin')->group(function () {        
+        Route::prefix('post-pengalaman')->group(function () {   
+
+        });
+        Route::prefix('artikel')->group(function () {  
+    
+        });
+        Route::prefix('saran')->group(function () {  
+    
+        });
+        Route::prefix('vaksinasi')->group(function () {  
+    
+        });
+    });
+
+});
