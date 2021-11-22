@@ -19,11 +19,11 @@ use Illuminate\Support\Facades\Auth;
 // Route Auth untuk login, Register dan Logout
 Auth::routes();
 
-Route::get('/', [HomeController::class, 'index'])->name('homepage');
+// Route::get('/', [HomeController::class, 'index'])->name('homepage');
 
 // Route Page Masyarakat
-Route::middleware(['can:isMasyrakat'])->group(function () {        
-    // Route::get('/', [HomeController::class, 'index'])->name('homepage');
+Route::middleware(['can:isMasyarakat'])->group(function () {        
+    Route::get('/', [HomeController::class, 'index'])->name('homepage');
     Route::prefix('post-pengalaman')->group(function () {   
 
     });
