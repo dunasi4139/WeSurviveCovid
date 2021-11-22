@@ -15,14 +15,11 @@ use Illuminate\Support\Facades\Auth;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
-
 
 // Route Auth untuk login, Register dan Logout
 Auth::routes();
 
+Route::get('/', [HomeController::class, 'index'])->name('homepage');
 
 // Route Page Masyarakat
 Route::middleware(['can:isMasyrakat'])->group(function () {        

@@ -9,19 +9,32 @@
                 <h4>Silahkan login atau daftar untuk melanjutkan</h4>
             </div>
         </div>
+
+        <form method="POST" action="{{ route('login') }}">
+            @csrf
         <div class="col-lg d-flex justify-content-center">
             <div class="card mx-auto" style="width: 32rem">
                 <div class="card-body p-4">
                     <form>
                         <div class="mb-3">
-                            <label class="form-label">Email address</label>
-                            <input type="email" class="form-control">
+                            <label class="form-label">{{ __('E-Mail Address') }}</label>
+                            <input type="email" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required autocomplete="email" autofocus>
+                            @error('email')
+                            <span class="invalid-feedback" role="alert">
+                                <strong>{{ $message }}</strong>
+                            </span>
+                        @enderror
                         </div>
                         <div class="mb-3">
-                            <label class="form-label">Password</label>
-                            <input type="password" class="form-control">
+                            <label class="form-label">{{ __('Password') }}</label>
+                            <input type="password" class="form-control @error('password') is-invalid @enderror" name="password" required autocomplete="current-password" >
+                            @error('password')
+                            <span class="invalid-feedback" role="alert">
+                                <strong>{{ $message }}</strong>
+                            </span>
+                        @enderror
                         </div>
-                        <button type="submit" class="btn btn-primary w-100 mb-2">Login</button>
+                        <button type="submit" class="btn btn-primary w-100 mb-2">{{ __('Login') }}</button>
                         <div class="form-text">Belum punya akun? daftar <a class="font-weight-bold" style="cursor: pointer">disini.</a></div>
                     </form>
                 </div>

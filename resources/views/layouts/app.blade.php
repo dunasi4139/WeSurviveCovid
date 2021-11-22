@@ -7,18 +7,18 @@
     <title>Novena- Health & Care Medical template</title>
 
     <!-- Favicon -->
-    <link rel="shortcut icon" type="image/x-icon" href="/images/favicon.ico" />
+    <link rel="shortcut icon" type="image/x-icon" href="{{ asset('images/favicon.ico') }}" />
 
     <!-- bootstrap.min css -->
-    <link rel="stylesheet" href="plugins/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="{{ asset('plugins/bootstrap/css/bootstrap.min.css') }}">
     <!-- Icon Font Css -->
-    <link rel="stylesheet" href="plugins/icofont/icofont.min.css">
+    <link rel="stylesheet" href="{{ asset('plugins/icofont/icofont.min.css') }}">
     <!-- Slick Slider  CSS -->
-    <link rel="stylesheet" href="plugins/slick-carousel/slick/slick.css">
-    <link rel="stylesheet" href="plugins/slick-carousel/slick/slick-theme.css">
+    <link rel="stylesheet" href="{{ asset('plugins/slick-carousel/slick/slick.css') }}">
+    <link rel="stylesheet" href="{{ asset('plugins/slick-carousel/slick/slick-theme.css') }}">
 
     <!-- Main Stylesheet -->
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="{{ asset('css/style.css') }}">
 
 </head>
 
@@ -47,7 +47,7 @@
     <nav class="navbar navbar-expand-lg navigation" id="navbar">
         <div class="container">
             <a class="navbar-brand" href="index.html">
-                <img src="images/logo.png" alt="" class="img-fluid">
+                <img src="{{ asset('images/logo.png') }}" alt="" class="img-fluid">
             </a>
 
             <button class="navbar-toggler collapsed" type="button" data-toggle="collapse" data-target="#navbarmain" aria-controls="navbarmain" aria-expanded="false" aria-label="Toggle navigation">
@@ -82,24 +82,24 @@ Essential Scripts
 
 
 <!-- Main jQuery -->
-<script src="plugins/jquery/jquery.js"></script>
+<script src="{{ asset('plugins/jquery/jquery.js') }}"></script>
 <!-- Bootstrap 4.3.2 -->
-<script src="plugins/bootstrap/js/popper.js"></script>
-<script src="plugins/bootstrap/js/bootstrap.min.js"></script>
-<script src="plugins/counterup/jquery.easing.js"></script>
+<script src="{{ asset('plugins/bootstrap/js/popper.js') }}"></script>
+<script src="{{ asset('plugins/bootstrap/js/bootstrap.min.js') }}"></script>
+<script src="{{ asset('plugins/counterup/jquery.easing.js') }}"></script>
 <!-- Slick Slider -->
-<script src="plugins/slick-carousel/slick/slick.min.js"></script>
+<script src="{{ asset('plugins/slick-carousel/slick/slick.min.js') }}"></script>
 <!-- Counterup -->
-<script src="plugins/counterup/jquery.waypoints.min.js"></script>
+<script src="{{ asset('plugins/counterup/jquery.waypoints.min.js') }}"></script>
 
-<script src="plugins/shuffle/shuffle.min.js"></script>
-<script src="plugins/counterup/jquery.counterup.min.js"></script>
+<script src="{{ asset('plugins/shuffle/shuffle.min.js') }}"></script>
+<script src="{{ asset('plugins/counterup/jquery.counterup.min.js') }}"></script>
 <!-- Google Map -->
-<script src="plugins/google-map/map.js"></script>
+<script src="{{ asset('plugins/google-map/map.js') }}"></script>
 <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAkeLMlsiwzp6b3Gnaxd86lvakimwGA6UA&callback=initMap"></script>
 
-<script src="js/script.js"></script>
-<script src="js/contact.js"></script>
+<script src="{{ asset('js/script.js') }}"></script>
+<script src="{{ asset('js/contact.js') }}"></script>
 
 </body>
 </html>
