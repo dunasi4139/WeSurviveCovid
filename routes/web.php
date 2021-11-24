@@ -16,6 +16,9 @@ use Illuminate\Support\Facades\Auth;
 |
 */
 
+Route::get('/test', function(){
+    return view('vaksinasi');
+});
 
 // Route Auth untuk login, Register dan Logout
 Auth::routes();
