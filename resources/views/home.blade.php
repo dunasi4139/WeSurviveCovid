@@ -1,4 +1,4 @@
-@extends('layouts.app-old')
+@extends('layouts.app')
 
 @section('content')
     <!-- Slider Start -->
@@ -65,7 +65,7 @@
             <div class="row align-items-center">
                 <div class="col-lg">
                     <div class="about-img mt-4 mt-lg-0">
-                        <img src="images/about/img-3.jpg" alt="" class="img-fluid">
+                        <img src="{{ asset('images/about/img-3.jpg') }} " alt="" class="img-fluid">
                     </div>
                 </div>
                 <div class="col-lg">
@@ -90,7 +90,7 @@
                 </div>
                 <div class="col-lg">
                     <div class="about-img mt-4 mt-lg-0">
-                        <img src="images/about/img-3.jpg" alt="" class="img-fluid">
+                        <img src="{{ asset('images/about/img-3.jpg') }} " alt="" class="img-fluid">
                     </div>
                 </div>
             </div>
@@ -99,7 +99,7 @@
             <div class="row align-items-center">
                 <div class="col-lg">
                     <div class="about-img mt-4 mt-lg-0">
-                        <img src="images/about/img-3.jpg" alt="" class="img-fluid">
+                        <img src="{{ asset('images/about/img-3.jpg') }}" alt="" class="img-fluid">
                     </div>
                 </div>
                 <div class="col-lg">
@@ -131,52 +131,52 @@
             <div class="row clients-logo">
                 <div class="col-lg-2">
                     <div class="client-thumb">
-                        <img src="images/about/1.png" alt="" class="img-fluid">
+                        <img src="{{ asset('images/about/1.png') }} " alt="" class="img-fluid">
                     </div>
                 </div>
                 <div class="col-lg-2">
                     <div class="client-thumb">
-                        <img src="images/about/2.png" alt="" class="img-fluid">
+                        <img src="{{ asset('images/about/2.png') }}" alt="" class="img-fluid">
                     </div>
                 </div>
                 <div class="col-lg-2">
                     <div class="client-thumb">
-                        <img src="images/about/3.png" alt="" class="img-fluid">
+                        <img src="{{ asset('images/about/3.png') }}" alt="" class="img-fluid">
                     </div>
                 </div>
                 <div class="col-lg-2">
                     <div class="client-thumb">
-                        <img src="images/about/4.png" alt="" class="img-fluid">
+                        <img src="{{ asset('images/about/4.png') }}" alt="" class="img-fluid">
                     </div>
                 </div>
                 <div class="col-lg-2">
                     <div class="client-thumb">
-                        <img src="images/about/5.png" alt="" class="img-fluid">
+                        <img src="{{ asset('images/about/5.png') }}" alt="" class="img-fluid">
                     </div>
                 </div>
                 <div class="col-lg-2">
                     <div class="client-thumb">
-                        <img src="images/about/6.png" alt="" class="img-fluid">
+                        <img src="{{ asset('images/about/6.png') }}" alt="" class="img-fluid">
                     </div>
                 </div>
                 <div class="col-lg-2">
                     <div class="client-thumb">
-                        <img src="images/about/3.png" alt="" class="img-fluid">
+                        <img src="{{ asset('images/about/3.png') }} alt="" class="img-fluid">
                     </div>
                 </div>
                 <div class="col-lg-2">
                     <div class="client-thumb">
-                        <img src="images/about/4.png" alt="" class="img-fluid">
+                        <img src="{{ asset('images/about/4.png') }}" alt="" class="img-fluid">
                     </div>
                 </div>
                 <div class="col-lg-2">
                     <div class="client-thumb">
-                        <img src="images/about/5.png" alt="" class="img-fluid">
+                        <img src="{{ asset('images/about/5.png') }}" alt="" class="img-fluid">
                     </div>
                 </div>
                 <div class="col-lg-2">
                     <div class="client-thumb">
-                        <img src="images/about/6.png" alt="" class="img-fluid">
+                        <img src="{{ asset('images/about/6.png') }} alt="" class="img-fluid">
                     </div>
                 </div>
             </div>
