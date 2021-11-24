@@ -8,7 +8,7 @@
             <div class="row">
                 <div class="col-md-12">
                     <div class="block text-center">
-                        <h1 class="text-capitalize mb-5 text-lg">Artikel</h1>
+                        <h1 class="text-capitalize mb-5 text-lg">{{ trans('global.nav.article') }}</h1>
                     </div>
                 </div>
             </div>

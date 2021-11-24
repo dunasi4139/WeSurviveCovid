@@ -8,7 +8,7 @@
     <div class="row">
       <div class="col-md-12">
         <div class="block text-center">
-          <h1 class="text-capitalize mb-5 text-lg">Halaman Vaksinasi</h1>
+          <h1 class="text-capitalize mb-5 text-lg">Halaman {{ trans('global.nav.vaccine') }}</h1>
         </div>
       </div>
     </div>

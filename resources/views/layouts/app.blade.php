@@ -54,28 +54,29 @@
                 <span class="icofont-navigation-menu"></span>
             </button>
 
+            @auth
             <div class="collapse navbar-collapse" id="navbarmain">
                 <ul class="navbar-nav ml-auto">
                     <li class="nav-item active">
-                        <a class="nav-link" href="{{ route('homepage') }}">Home</a>
+                        <a href="{{ route('homepage') }}" class="nav-link" href="{{ route('homepage') }}">{{ trans('global.nav.home') }}</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link">Postingan</a>
+                        <a class="nav-link">{{ trans('global.nav.post') }}</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link">Artikel</a>
+                        <a href="{{ route('article.index') }}" class="nav-link">{{ trans('global.nav.article') }}</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link">Saran</a>
+                        <a class="nav-link">{{ trans('global.nav.suggestion') }}</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link">Vaksinasi</a>
+                        <a href="{{ route('vaccine.index') }}" class="nav-link">{{ trans('global.nav.vaccine') }}</a>
                     </li>
                     <li class="nav-item">
                         <a class="dropdown-item" href="{{ route('logout') }}"
                         onclick="event.preventDefault();
                                       document.getElementById('logout-form').submit();">
-                         {{ __('Logout') }}
+                         {{ trans('global.nav.logout') }}
                      </a>
                      <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
                         @csrf
@@ -83,6 +84,8 @@
                     </li>
                 </ul>
             </div>
+            @endauth
+            
         </div>
     </nav>
 </header>

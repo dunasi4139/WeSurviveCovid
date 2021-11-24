@@ -13,11 +13,20 @@ return [
     |
     */
 
+    'nav' => [
+        'article' => 'Artikel',
+        'home' => 'Beranda',
+        'logout' => 'Keluar',
+        'post' => 'Postingan',
+        'suggestion' => 'Saran',
+        'vaccine' => 'Vaksinasi',
+    ],
     'email' => 'Email',
     'forgot' => 'Lupa password',
     'login' => 'Masuk',
     'name' => 'Nama Lengkap',
     'password' => 'Kata Sandi',
     'register' => 'Daftar',
-    'remember' => 'Ingat saya' 
+    'remember' => 'Ingat saya', 
+    
 ];

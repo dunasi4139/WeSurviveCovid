@@ -2,6 +2,8 @@
 
 use App\Http\Controllers\Auth\RegisterController;
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\ArticleController;
+use App\Http\Controllers\VaccineController;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Auth;
 
@@ -17,7 +19,7 @@ use Illuminate\Support\Facades\Auth;
 */
 
 Route::get('/test', function(){
-    return view('landing');
+    return view('vaksinasi');
 });
 
 // Route Auth untuk login, Register dan Logout
@@ -26,8 +28,19 @@ Auth::routes();
 //Register Untuk Dokter
 Route::get('/register-dokter', [RegisterController::class, 'dokterIndex'])->name('register-dokter');
 
-//Home jadi satu, pecahnya nanti di blade
-Route::get('/', [HomeController::class, 'index'])->name('homepage');
+//Menu
+Route::middleware('auth')->group(function () {   
+    Route::get('/', [HomeController::class, 'index'])->name('homepage');
+
+    Route::group(['prefix' => 'artikel','as' => 'article.'], function () {  
+        Route::get('', [ArticleController::class, 'index'])->name('index');
+    });
+    
+    Route::group(['prefix' => 'vaksinasi','as' => 'vaccine.'], function () {
+        Route::get('', [VaccineController::class, 'index'])->name('index');
+    });
+});
+
 
 // Route Page Masyarakat
 Route::middleware(['can:isMasyarakat'])->group(function () {        
