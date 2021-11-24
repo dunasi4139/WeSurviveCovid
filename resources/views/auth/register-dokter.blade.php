@@ -8,11 +8,11 @@
             <form method="POST" action="{{ route('register') }}">
                 @csrf
                 <div class="mb-3">
-                    <h4>Daftar</h4>
+                    <h4>{{ trans('global.register') }}</h4>
                 </div>
 
                 <div class="mb-3">
-                    <label class="form-label">Nama Lengkap</label>
+                    <label class="form-label">{{ trans('global.name') }}</label>
                     <input type="text" class="form-control @error('name') is-invalid @enderror" name="name"
                         value="{{ old('name') }}" required autocomplete="name" autofocus>
                     @error('name')
@@ -23,7 +23,7 @@
                 </div>
 
                 <div class="mb-3">
-                    <label class="form-label">Email address</label>
+                    <label class="form-label">{{ trans('global.email') }}</label>
                     <input type="email" class="form-control @error('email') is-invalid @enderror" name="email"
                         value="{{ old('email') }}" required autocomplete="email" autofocus>
                     @error('email')
@@ -34,7 +34,7 @@
                 </div>
 
                 <div class="mb-3">
-                    <label class="form-label">No Izin Praktek</label>
+                    <label class="form-label">No. Izin Praktek</label>
                     <input type="number" class="form-control @error('no_dokter') is-invalid @enderror" name="no_dokter"
                     value="{{ old('no_dokter') }}" required autocomplete="no_dokter" autofocus>
                 @error('no_dokter')
@@ -45,7 +45,7 @@
                 </div>
 
                 <div class="mb-3">
-                    <label class="form-label">Password</label>
+                    <label class="form-label">{{ trans('global.password') }}</label>
                     <input type="password" class="form-control @error('password') is-invalid @enderror" name="password"
                         required autocomplete="new-password">
 
@@ -57,14 +57,14 @@
                 </div>
 
                 <div class="mb-3">
-                    <label class="form-label">Konfirmasi Password</label>
+                    <label class="form-label">Konfirmasi {{ trans('global.password') }}</label>
                     <input type="password" class="form-control" name="password_confirmation" required
                         autocomplete="new-password">
                 </div>
                 
                 <button type="submit" class="btn btn-primary w-100 mb-2">Daftar</button>
-                <div class="form-text">Anda bukan dokter? daftar untuk akun non dokter <a class="font-weight-bold" style="cursor: pointer" href="{{ route('register') }}">disini</a></div>
-                <div class="form-text">Sudah punya akun? login <a class="font-weight-bold" style="cursor: pointer" href="{{ route('login') }}" >disini</a></div>
+                <div class="form-text">Anda bukan dokter? {{ trans('global.register') }} untuk akun non dokter <a class="font-weight-bold" style="cursor: pointer" href="{{ route('register') }}">di sini</a></div>
+                <div class="form-text">Sudah punya akun? {{ trans('global.login') }} <a class="font-weight-bold" style="cursor: pointer" href="{{ route('login') }}" >di sini</a></div>
             </form>
         </div>
     </div>

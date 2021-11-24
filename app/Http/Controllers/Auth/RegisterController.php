@@ -53,8 +53,9 @@ class RegisterController extends Controller
 
     public function dokterIndex()
     {
-        return view('register-dokter');
+        return view('auth.register-dokter');
     }
+
     protected function validator(array $data)
     {
 
