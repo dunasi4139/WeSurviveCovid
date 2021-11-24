@@ -46,8 +46,8 @@
     </div>
     <nav class="navbar navbar-expand-lg navigation" id="navbar">
         <div class="container">
-            <a class="navbar-brand" href="index.html">
-                <img src="{{ asset('images/logo.png') }}" alt="" class="img-fluid">
+            <a class="navbar-brand" href="{{ route('homepage') }}">
+                <img src="{{ asset('images/team/logo-pp.png') }}" alt="" class="img-fluid">
             </a>
 
             <button class="navbar-toggler collapsed" type="button" data-toggle="collapse" data-target="#navbarmain" aria-controls="navbarmain" aria-expanded="false" aria-label="Toggle navigation">
@@ -57,11 +57,30 @@
             <div class="collapse navbar-collapse" id="navbarmain">
                 <ul class="navbar-nav ml-auto">
                     <li class="nav-item active">
-                        <a class="nav-link" href="index.html">Home</a>
+                        <a class="nav-link" href="{{ route('homepage') }}">Home</a>
                     </li>
-                    <li class="nav-item"><a class="nav-link">Postingan</a></li>
-                    <li class="nav-item"><a class="nav-link">Artikel</a></li>
-                    <li class="nav-item"><a class="nav-link">Vaksinasi</a></li>
+                    <li class="nav-item">
+                        <a class="nav-link">Postingan</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link">Artikel</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link">Saran</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link">Vaksinasi</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="dropdown-item" href="{{ route('logout') }}"
+                        onclick="event.preventDefault();
+                                      document.getElementById('logout-form').submit();">
+                         {{ __('Logout') }}
+                     </a>
+                     <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+                        @csrf
+                    </form>
+                    </li>
                 </ul>
             </div>
         </div>

@@ -14,12 +14,8 @@ class CreateDokterTable extends Migration
     public function up()
     {
         Schema::create('dokter', function (Blueprint $table) {
-            $table->id();
-            $table->string('name');
-            $table->string('email')->unique();
+            $table->integer('user_id');
             $table->string('no_dokter');
-            $table->string('password');
-            $table->integer('role_id'); // 0 = Admin  1 = Masyarakat 2 = Dokter
             $table->timestamps();
         });
     }

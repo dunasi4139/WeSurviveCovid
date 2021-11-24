@@ -19,7 +19,6 @@ class CreateUsersTable extends Migration
             $table->string('email')->unique();
             $table->string('password');
             $table->integer('role_id'); // 0 = Admin  1 = Masyarakat 2 = Dokter
-            $table->rememberToken();
             $table->timestamps();
         });
     }

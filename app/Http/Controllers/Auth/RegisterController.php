@@ -48,6 +48,13 @@ class RegisterController extends Controller
      * @param  array  $data
      * @return \Illuminate\Contracts\Validation\Validator
      */
+
+
+
+    public function dokterIndex()
+    {
+        return view('register-dokter');
+    }
     protected function validator(array $data)
     {
 
@@ -82,6 +89,7 @@ class RegisterController extends Controller
         $user = User::create([
             'name' => $data['name'],
             'email' => $data['email'],
+            'role_id' => 1,
             'password' => Hash::make($data['password']),
         ]);
 

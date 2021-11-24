@@ -176,7 +176,7 @@
                 </div>
                 <div class="col-lg-2">
                     <div class="client-thumb">
-                        <img src="{{ asset('images/about/6.png') }} alt="" class="img-fluid">
+                        <img src="{{ asset('images/about/6.png') }}" alt="" class="img-fluid">
                     </div>
                 </div>
             </div>
