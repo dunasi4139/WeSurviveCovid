@@ -17,7 +17,7 @@ use Illuminate\Support\Facades\Auth;
 */
 
 Route::get('/test', function(){
-    return view('vaksinasi');
+    return view('landing');
 });
 
 // Route Auth untuk login, Register dan Logout
@@ -26,9 +26,11 @@ Auth::routes();
 //Register Untuk Dokter
 Route::get('/register-dokter', [RegisterController::class, 'dokterIndex'])->name('register-dokter');
 
+//Home jadi satu, pecahnya nanti di blade
+Route::get('/', [HomeController::class, 'index'])->name('homepage');
+
 // Route Page Masyarakat
 Route::middleware(['can:isMasyarakat'])->group(function () {        
-    Route::get('/', [HomeController::class, 'index'])->name('homepage');
     Route::prefix('post-pengalaman')->group(function () {   
 
     });
@@ -45,7 +47,6 @@ Route::middleware(['can:isMasyarakat'])->group(function () {
 
 // Route Page Dokter
 Route::middleware(['can:isDokter'])->group(function () {        
-    Route::get('/', [HomeController::class, 'index'])->name('homepage');
     Route::prefix('post-pengalaman')->group(function () {   
 
     });
