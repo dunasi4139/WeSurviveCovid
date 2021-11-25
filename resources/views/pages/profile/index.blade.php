@@ -31,13 +31,17 @@
                     <h2 class="text-md">{{ $user->name }}</h2>
                     <div class="divider my-4"></div>
                     <p>Email: {{ $user->email }}</p>
-               </div>
+
+                    @if($user->noDokter->no_dokter != null)
+                    <p>No. Izin Praktek: {{ $user->noDokter->no_dokter }}</p>
+                    @endif
+                </div>
             </div>
         </div>
     </div>
 </section>
 
-<section class="section doctor-qualification gray-bg">
+<section class="section doctor-qualification pt-0">
     <div class="container">
         <div class="row">
             <div class="col-lg-6">
@@ -48,20 +52,25 @@
             </div>
         </div>
 
-        <div class="d-flex flex-wrap" style="flex-direction: row">
-
-           <div class="card w-50" style="border-radius: 0">
-               <div class="card-body">
-                   <h4 class="mb-3 title-color">MBBS, M.D at University of Wyoming</h4>
-                   <p>Lorem, consectetur adipisicing elit. Nisi doloremque harum, mollitia, soluta maxime porro veritatis fuga autem impedit corrupti aperiam sint, architecto, error nesciunt temporibus! Vel quod, dolor aliquam!</p>
-                   <div class="row p-2">
-                       <a class="btn btn-primary btn-sm text-white m-1" style="cursor:pointer;">Edit</a>
-                       <a class="btn btn-danger btn-sm text-white m-1" style="cursor:pointer;">Delete</a>
-                   </div>
-               </div>
-           </div>
-
+        <div class="row">
+            @foreach($contents as $content)
+            <div class="col-lg-4 col-md-6 col-sm-6">
+                <div class="service-block mb-5">
+                    <img src="images/service/service-1.jpg" alt="" class="img-fluid">
+                    <div class="content">
+                        <h4 class="mt-4 mb-2 title-color">{{ $content->judul }}</h4>
+                        <p class="mb-4 ellipsis">{{ $content->isi }}</p>
+                    </div>
+                    <div class="d-flex">
+                        <a href="" target="_blank" class="p-2 px-3 btn btn-main btn-round-full">Lihat</a>
+                        <a href="" target="_blank" class="p-2 px-3 mx-2 btn btn-main btn-round-full">Edit</a>
+                        <a href="" class="p-2 px-3 btn btn-main-2 btn-round-full">Hapus</a>
+                    </div>
+                </div>
+            </div>
+            @endforeach
         </div>
+
     </div>
 </section>
 @endsection
