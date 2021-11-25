@@ -41,31 +41,35 @@
                     <ul class="navbar-nav ml-auto">
                         @guest
                         <li class="nav-item active">
-                            <a class="nav-link" href="{{ route('register') }}">{{ trans('global.register') }}</a>
+                            <a style="cursor: pointer" class="nav-link" href="{{ route('register') }}">{{ trans('global.register') }}</a>
                         </li>
                         <li class="nav-item">
-                            <a href="{{ route('login') }}" class="nav-link">{{ trans('global.login') }}</a>
+                            <a style="cursor: pointer" href="{{ route('login') }}" class="nav-link">{{ trans('global.login') }}</a>
                         </li>
                         @endguest
 
                         @auth
                         <li class="nav-item active">
-                            <a href="{{ route('homepage') }}" class="nav-link" href="{{ route('homepage') }}">{{ trans('global.nav.home') }}</a>
+                            <a style="cursor: pointer" href="{{ route('homepage') }}" class="nav-link" href="{{ route('homepage') }}">{{ trans('global.nav.home') }}</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link">{{ trans('global.nav.post') }}</a>
+                            <a style="cursor: pointer" class="nav-link">{{ trans('global.nav.post') }}</a>
+                        </li>
+                        <li class="nav-item dropdown">
+                                    <a style="cursor: pointer" class="nav-link">{{ trans('global.nav.article') }}</a>
+                                    <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                        <li><a class="dropdown-item" href="{{ route('article.index') }}">Lihat</a></li>
+                                        <li><a class="dropdown-item" href="#">Buat Baru</a></li>
+                                    </ul>
+                                </li>
+                        <li class="nav-item">
+                            <a style="cursor: pointer" class="nav-link">{{ trans('global.nav.suggestion') }}</a>
                         </li>
                         <li class="nav-item">
-                            <a href="{{ route('article.index') }}" class="nav-link">{{ trans('global.nav.article') }}</a>
+                            <a style="cursor: pointer" href="{{ route('vaccine.index') }}" class="nav-link">{{ trans('global.nav.vaccine') }}</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link">{{ trans('global.nav.suggestion') }}</a>
-                        </li>
-                        <li class="nav-item">
-                            <a href="{{ route('vaccine.index') }}" class="nav-link">{{ trans('global.nav.vaccine') }}</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="dropdown-item m-2" href="{{ route('logout') }}" onclick="event.preventDefault();
+                            <a style="cursor: pointer" class="dropdown-item m-2" href="{{ route('logout') }}" onclick="event.preventDefault();
                                       document.getElementById('logout-form').submit();">
                                 {{ trans('global.nav.logout') }}
                             </a>
@@ -76,8 +80,6 @@
                         @endauth
                     </ul>
                 </div>
-
-
             </div>
         </nav>
     </header>
