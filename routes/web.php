@@ -34,8 +34,14 @@ Route::middleware('auth')->group(function () {
 
     Route::group(['prefix' => 'artikel','as' => 'article.'], function () {  
         Route::get('', [ArticleController::class, 'index'])->name('index');
+        
+        Route::get('/form', [ArticleController::class, 'create'])->middleware(['can:isDokter'])->name('create');
 
-        Route::get('/form', [ArticleController::class, 'index'])->middleware(['can:isDokter'])->name('create');
+        Route::post('/form', [ArticleController::class, 'store'])->middleware(['can:isDokter'])->name('store');
+
+        Route::get('/{id}', [ArticleController::class, 'show'])->name('show');   
+        
+        Route::put('/form/{id}', [ArticleController::class, 'edit'])->middleware(['can:isDokter'])->name('edit');   
     });
     
     Route::group(['prefix' => 'vaksinasi','as' => 'vaccine.'], function () {

@@ -2,7 +2,9 @@
 
 namespace App\Http\Controllers;
 
+use Illuminate\Support\Facades\Auth;
 use App\Models\Article;
+use App\Models\User;
 use Illuminate\Http\Request;
 
 class ArticleController extends Controller
@@ -36,7 +38,29 @@ class ArticleController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $avatarPathDB = "";
+
+        $request->validate([
+            'title' => ['required', 'string'],
+            'content' => ['required', 'string'],
+        ]);
+
+        $article = Article::create([
+            'dokter_id' => Auth::id(),
+            'judul' => $request->title,
+            'isi' => $request->content,
+            'gambar' => "/images/blog/default.jpg"
+        ]);
+
+        $id = Article::latest()->first();
+
+        if ($request->hasFile('image')) {
+            $image = $request->file('image');
+            $avatarPath = $image->storeAs('/images/blog/', $id->id . '.jpg');
+            Article::where('id', '=', $id->id)->update(array('gambar' => $avatarPath));
+        }
+
+        return redirect()->route('article.index');
     }
 
     /**
@@ -47,7 +71,10 @@ class ArticleController extends Controller
      */
     public function show($id)
     {
-        //
+        $user = User::find(Auth::id());
+        $article = Article::find($id);
+        
+        return view('pages.article.show', compact('article', 'user'));
     }
 
     /**
@@ -58,7 +85,9 @@ class ArticleController extends Controller
      */
     public function edit($id)
     {
-        //
+        $article = Article::find($id);
+        
+        return view('pages.article.edit', compact('article'));
     }
 
     /**

@@ -7,7 +7,7 @@
         <div class="row">
             <div class="col-md-12">
                 <div class="block text-center">
-                    <h1 class="text-capitalize mb-5 text-lg">Edit {{ trans('global.nav.article') }}</h1>
+                    <h1 class="text-capitalize mb-5 text-lg">Buat {{ trans('global.nav.article') }}</h1>
                 </div>
             </div>
         </div>
@@ -20,12 +20,12 @@
             <div class="card-body p-4">
 
 
-                <form method="POST" action="">
+                <form method="POST" action="{{ route('article.store') }}" enctype="multipart/form-data">
                     @csrf
 
                     <div class="mb-3">
                         <label class="form-label">{{ trans('global.title') }}</label>
-                        <input type="text" class="form-control @error('title') is-invalid @enderror" name="title" value="{{ old('title') }}" required autocomplete="title" autofocus>
+                        <input type="text" class="form-control @error('title') is-invalid @enderror" name="title" value="{{ old('title') }}" required >
                         @error('title')
                         <span class="invalid-feedback" role="alert">
                             <strong>{{ $message }}</strong>
@@ -35,7 +35,17 @@
 
                     <div class="mb-3">
                         <label class="form-label">{{ trans('global.content') }}</label>
-                        <textarea style="height: 300px" type="text" class="form-control @error('content') is-invalid @enderror" name="content" value="{{ old('content') }}" required autocomplete="title" autofocus></textarea>
+                        <textarea style="height: 300px" type="text" class="form-control @error('content') is-invalid @enderror" name="content" value="{{ old('content') }}" required></textarea>
+                        @error('content')
+                        <span class="invalid-feedback" role="alert">
+                            <strong>{{ $message }}</strong>
+                        </span>
+                        @enderror
+                    </div>
+
+                    <div class="mb-3">
+                        <label class="form-label">Gambar</label>
+                        <input type="file" name="image">
                         @error('content')
                         <span class="invalid-feedback" role="alert">
                             <strong>{{ $message }}</strong>

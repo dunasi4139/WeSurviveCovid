@@ -25,22 +25,35 @@
                             <div class="blog-thumb">
                                 <img src="images/blog/blog-1.jpg" alt="" class="img-fluid ">
                             </div>
-
                             <div class="blog-item-content">
                                 <div class="blog-item-meta mb-3 mt-4">
                                     <span class="text-black text-capitalize mr-3"><i class="icofont-calendar mr-1"></i> 28th January</span>
                                 </div>
-
                                 <h2 class="mt-3 mb-3"><a href="blog-single.html">Choose quality service over cheap service all type of things</a></h2>
-
                                 <p class="mb-4">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Blanditiis aliquid architecto facere commodi cupiditate omnis voluptatibus inventore atque velit cum rem id assumenda quam recusandae ipsam ea porro, dicta ad.</p>
-
                                 <a href="" target="_blank" class="btn btn-main btn-icon btn-round-full">{{ trans('global.more') }}<i class="icofont-simple-right ml-2  "></i></a>
                             </div>
                         </div>
                     </div>
 
 
+                    @foreach($articles as $article)
+                    <div class="col-lg-12 col-md-12 mb-5">
+                        <div class="blog-item">
+                            <div class="blog-thumb">
+                                <img src="{{ $article->gambar }}" alt="" class="img-fluid ">
+                            </div>
+                            <div class="blog-item-content">
+                                <div class="blog-item-meta mb-3 mt-4">
+                                    <span class="text-black text-capitalize mr-3"><i class="icofont-calendar mr-1"></i> {{ $article->created_at->isoFormat('dddd, D MMMM Y H:i') }} </span>
+                                </div>
+                                <h2 class="mt-3 mb-3">{{ $article->judul }}</h2>
+                                <p class="mb-4 ellipsis">{{ $article->isi }}</p>
+                                <a href="{{ route('article.show', $article->id) }}" target="_blank" class="btn btn-main btn-icon btn-round-full">{{ trans('global.more') }}<i class="icofont-simple-right ml-2  "></i></a>
+                            </div>
+                        </div>
+                    </div>
+                    @endforeach
                 </div>
             </div>
             <div class="col-lg-4">

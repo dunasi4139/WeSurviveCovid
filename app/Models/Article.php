@@ -17,4 +17,8 @@ class Article extends Model
         'isi',
         'dokter_id'
     ];
+
+    public function user(){
+        return $this->belongsTo(User::class, 'dokter_id');
+    }
 }
