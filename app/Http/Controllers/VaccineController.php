@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\TempatVaksin;
 use Illuminate\Http\Request;
 
 class VaccineController extends Controller
@@ -13,7 +14,9 @@ class VaccineController extends Controller
      */
     public function index()
     {
-        return view('pages.vaccine.index');
+        $data = TempatVaksin::orderBy('id')
+        ->paginate(1);
+        return view('pages.vaccine.index', compact('data'));
     }
 
     /**
