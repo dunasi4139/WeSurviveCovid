@@ -3,9 +3,12 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Models\Suggestion;
+use App\Models\User;
+use App\Models\Article;
+use App\Models\Post;
+use Illuminate\Support\Facades\Auth;
 
-class SuggestionController extends Controller
+class ProfileController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -14,9 +17,15 @@ class SuggestionController extends Controller
      */
     public function index()
     {
-        $suggestions = Suggestion::orderByDesc('created_at')->paginate(6);
+        $user = User::find(Auth::id());
 
-        return view('pages.suggestion.index', compact('suggestions'));
+        if($user->role_id == 2) {
+            $contents = Article::where('dokter_id', Auth::id())->orderByDesc('created_at')->paginate(6);
+        } else {
+            //$contents = Post::where('user_id', Auth::id())->orderByDesc('created_at')->paginate(6);
+        }
+
+        return view('pages.profile.index', compact('user', 'contents'));
     }
 
     /**
@@ -48,9 +57,7 @@ class SuggestionController extends Controller
      */
     public function show($id)
     {
-        $suggestion = Suggestion::find($id);
-
-        return view('pages.suggestion.show', compact('suggestion'));
+        //
     }
 
     /**

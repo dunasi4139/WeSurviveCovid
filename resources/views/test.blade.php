@@ -1,248 +1,748 @@
+light_user_profile.html
+Who has access
+
+System properties
+Type
+HTML
+Size
+28 KB
+Storage used
+28 KB
+Location
+Rekayasa Perangkat Lunak
+Owner
+Oktavia DNA
+Modified
+10:19 PM by Oktavia DNA
+Opened
+10:56 PM by me
+Created
+10:54 PM
+Add a description
+Viewers can download
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="utf-8">
     <!--  This file has been downloaded from bootdey.com @bootdey on twitter -->
     <!--  All snippets are MIT license http://bootdey.com/license -->
-    <title>PROFILE USER</title>
+    <title>light user profile - Bootdey.com</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
 	<script src="https://code.jquery.com/jquery-1.10.2.min.js"></script>
-    <link href="https://netdna.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" rel="stylesheet">
-	<script src="https://netdna.bootstrapcdn.com/bootstrap/4.0.0-beta/js/bootstrap.min.js"></script>
+    <link href="https://netdna.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+	<script src="https://netdna.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 </head>
 <body>
-
 <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet">
 <div class="container">
-
-    <div class="row">
-        <div class="col-md-4 mb30">
-            <div class="card">
-
-                <div class="card-content pt20 pb20 profile-header">
-                    <img src="https://bootdey.com/img/Content/avatar/avatar6.png" alt="" class="img-fluid rounded-circle">
-                    <h4 class="card-title text-center mb20">Zaidan Tifftazany </h4>
-                    <p align="justify">
-                        Selamat datang di website WeSurviveCovid ! website ini bertujuan sebagai sarana bertukar informasi dan pengalaman seputar Covid-19. Selalu pantau terus perkembangan seputar Covid19 melalui WeSurviveCovid dan jangan lupa jaga kesehatan dan patuhi protokol kesehatan.
-                    </p>
-                    <hr>
-                    <p>Nama  :&ensp;Zaidan Tifftazany B </p>
-                    <p>Email :&ensp;Idan102gmail.com</p>
-                    <a href="#" class="btn btn-primary btn-rounded">Kembali</a>
-                    <hr>
-                    
-                </div>
-                <!--content-->
-
+<div class="row">
+      <div class="col-md-12 text-center ">
+        <div class="panel panel-default">
+          <div class="userprofile social ">
+            <div class="userpic"> <img src="https://bootdey.com/img/Content/avatar/avatar6.png" alt="" class="userpicimg"> </div>
+            <h3 class="username">Lucky Sans</h3>
+            <p>Gujarat, India</p>
+            <div class="socials tex-center"> <a href="" class="btn btn-circle btn-primary ">
+            <i class="fa fa-facebook"></i></a> <a href="" class="btn btn-circle btn-danger ">
+            <i class="fa fa-google-plus"></i></a> <a href="" class="btn btn-circle btn-info ">
+            <i class="fa fa-twitter"></i></a> <a href="" class="btn btn-circle btn-warning "><i class="fa fa-envelope"></i></a>
             </div>
+          </div>
+          <div class="col-md-12 border-top border-bottom">
+            <ul class="nav nav-pills pull-left countlist" role="tablist">
+              <li role="presentation">
+                <h3>1452<br>
+                  <small>Follower</small> </h3>
+              </li>
+              <li role="presentation">
+                <h3>245<br>
+                  <small>Following</small> </h3>
+              </li>
+              <li role="presentation">
+                <h3>5000<br>
+                  <small>Activity</small> </h3>
+              </li>
+            </ul>
+            <button class="btn btn-primary followbtn">Follow</button>
+          </div>
+          <div class="clearfix"></div>
         </div>
-        <div class="col-md-8 mb30">
-            <div class="card">
-                <div>
-
-                    <!-- Nav tabs -->
-                    <ul class="nav tabs-admin" role="tablist">
-                        <li role="presentation" class="nav-item"><a class="nav-link active" href="#t1" aria-controls="t1" role="tab" data-toggle="tab">Activities</a></li>
-                    </ul>
-
-                    <!-- Tab panes -->
-                    <div class="tab-content admin-tab-content pt30">
-                        <div role="tabpanel" class="tab-pane active show" id="t1">
-                            <ul class="activity-list list-unstyled">
-                                <li class="clearfix">
-                                    <div class="float-left">
-                                        <a href="#"><img src="https://bootdey.com/img/Content/avatar/avatar6.png" alt="" class="img-fluid rounded-circle"></a>
-                                    </div>
-                                    <div class="act-content">
-                                        <div class="font400">
-
-                                            <a href="#" class="font600">Zaidan Tifftazany</a> Posting
-                                        </div>
-                                        <span class="text-small">11 Min Ago</span>
-                                        <p>
-                                            Selamat pagi, masih hidupkah kalian?
-                                        </p>
-                                        <img src="https://bootdey.com/img/Content/avatar/avatar6.png" alt="" class="img-fluid img-thumbnail">
-                                    </div>
-                                </li>
-                                <li class="clearfix">
-                                    <div class="float-left">
-                                        <a href="#"><img src="https://bootdey.com/img/Content/avatar/avatar6.png" alt="" class="img-fluid rounded-circle"></a>
-                                    </div>
-                                    <div class="act-content">
-                                        <div class="font400">
-
-                                            <a href="#" class="font600">Zaidan Tifftazany</a> Posting
-                                        </div>
-                                        <span class="text-small">11 Min Ago</span>
-                                        <p class="mb0">
-                                            Berita covid hari ini sudah lumayan meskipun KATANYA :v
-                                        </p>
-                                    </div>
-                                </li>
-                                <li class="clearfix">
-                                    <div class="float-left">
-                                        <a href="#"><img src="https://bootdey.com/img/Content/avatar/avatar6.png" alt="" class="img-fluid rounded-circle"></a>
-                                    </div>
-                                    <div class="act-content">
-                                        <div class="font400">
-
-                                            <a href="#" class="font600">Zaidan Tifftazany</a> Posting
-                                        </div>
-                                        <span class="text-small">11 Min Ago</span>
-                                        <p class="mb20">
-                                            Berikan saya istirahat tuhan dari realita hidup yang semkin sempit :v 
-                                        </p>
-                                        <a href="#" class="btn btn-sm btn-secondary">Reply</a>
-                                    
-                                        </div>
-                                    </div>
-                                </li>
-                            </ul>
-                        </div>
-                        <div role="tabpanel" class="tab-pane" id="t4">
-                        </div>
-                    </div>
-
-                </div>
+      </div>
+      <!-- /.col-md-12 -->
+      <div class="col-md-4 col-sm-12 pull-right">
+        <div class="panel panel-default">
+          <div class="panel-heading">
+            <h1 class="page-header small">Personal Details</h1>
+            <p class="page-subtitle small">Limited information is visible</p>
+          </div>
+          <div class="col-md-12 photolist">
+            <div class="row">
+              <div class="col-sm-3 col-xs-3"><img src="https://bootdey.com/img/Content/avatar/avatar1.png" class="" alt=""> </div>
+              <div class="col-sm-3 col-xs-3"><img src="https://bootdey.com/img/Content/avatar/avatar1.png" class="" alt=""> </div>
+              <div class="col-sm-3 col-xs-3"><img src="https://bootdey.com/img/Content/avatar/avatar1.png" class="" alt=""> </div>
+              <div class="col-sm-3 col-xs-3"><img src="https://bootdey.com/img/Content/avatar/avatar1.png" class="" alt=""> </div>
             </div>
+          </div>
+          <div class="clearfix"></div>
         </div>
+        <div class="panel panel-default">
+          <div class="panel-heading">
+            <h1 class="page-header small">Worked with many domain</h1>
+            <p class="page-subtitle small">Like to work fr different business</p>
+          </div>
+          <div class="col-md-12">
+            <ul class="list-group">
+              <li class="list-group-item"><span class="fa fa-male"></span> Worked with 1000+ people</li>
+              <li class="list-group-item"><span class="fa fa-institution"></span> 60+ offices</li>
+              <li class="list-group-item"><span class="fa fa-user"></span> 50000+ satify customers</li>
+              <li class="list-group-item"><span class="fa fa-clock-o"></span> Work hours many and many still counting</li>
+              <li class="list-group-item"><span class="fa fa-heart"></span> Customer satisfaction for servics</li>
+            </ul>
+          </div>
+          <div class="clearfix"></div>
+        </div>
+        <div class="panel panel-default">
+          <div class="panel-heading">
+            <h1 class="page-header small">What others are saying </h1>
+            <p class="page-subtitle small">Express your self, Express to other</p>
+          </div>
+          <div class="col-md-12">
+            <div class="media">
+              <div class="media-left"> <a href="javascript:void(0)"> <img src="https://bootdey.com/img/Content/avatar/avatar1.png" alt="" class="media-object"> </a> </div>
+              <div class="media-body">
+                <h4 class="media-heading">Lucky Sans</h4>
+                Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin commodo. Cras purus odio. </div>
+            </div>
+            <div class="media">
+              <div class="media-left"> <a href="javascript:void(0)"> 
+              <img src="https://bootdey.com/img/Content/avatar/avatar1.png" alt="" class="media-object"> </a> </div>
+              <div class="media-body">
+                <h4 class="media-heading">John Doe</h4>
+                Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin commodo. Cras purus odio. </div>
+            </div>
+          </div>
+          <div class="clearfix"></div>
+        </div>
+        <div class="panel panel-default">
+          <div class="panel-heading">
+            <h1 class="page-header small">Recently Connected</h1>
+            <p class="page-subtitle small">You have recemtly connected with 34 friends</p>
+          </div>
+          <div class="col-md-12">
+            <div class="memberblock"> <a href="" class="member"> <img src="https://bootdey.com/img/Content/avatar/avatar2.png" alt="">
+              <div class="memmbername">Ajay Sriram</div>
+              </a> <a href="" class="member"> <img src="https://bootdey.com/img/Content/avatar/avatar1.png" alt="">
+              <div class="memmbername">Rajesh Sriram</div>
+              </a> <a href="" class="member"> <img src="https://bootdey.com/img/Content/avatar/avatar1.png" alt="">
+              <div class="memmbername">Manish Sriram</div>
+              </a> <a href="" class="member"> <img src="https://bootdey.com/img/Content/avatar/avatar1.png" alt="">
+              <div class="memmbername">Chandra Amin</div>
+              </a> <a href="" class="member"> <img src="https://bootdey.com/img/Content/avatar/avatar1.png" alt="">
+              <div class="memmbername">John Sriram</div>
+              </a> <a href="" class="member"> <img src="https://bootdey.com/img/Content/avatar/avatar1.png" alt="">
+              <div class="memmbername">Lincoln Sriram</div>
+              </a> </div>
+          </div>
+          <div class="clearfix"></div>
+        </div>
+      </div>
+      <div class="col-md-8 col-sm-12 pull-left posttimeline">
+        <div class="panel panel-default">
+          <div class="panel-body">
+            <div class="status-upload nopaddingbtm">
+              <form>
+                <textarea class="form-control" placeholder="What are you doing right now?"></textarea>
+                <br>
+                <ul class="nav nav-pills pull-left ">
+                  <li><a title="" data-toggle="tooltip" data-placement="bottom" data-original-title="Audio"><i class="glyphicon glyphicon-bullhorn"></i></a></li>
+                  <li><a title="" data-toggle="tooltip" data-placement="bottom" data-original-title="Video"><i class=" glyphicon glyphicon-facetime-video"></i></a></li>
+                  <li><a title="" data-toggle="tooltip" data-placement="bottom" data-original-title="Picture"><i class="glyphicon glyphicon-picture"></i></a></li>
+                </ul>
+                <button type="submit" class="btn btn-success pull-right"> Share</button>
+              </form>
+            </div>
+            <!-- Status Upload  --> 
+          </div>
+        </div>
+        <div class="panel panel-default">
+          <div class="btn-group pull-right postbtn">
+            <button type="button" class="dotbtn dropdown-toggle" data-toggle="dropdown" aria-expanded="false"> <span class="dots"></span> </button>
+            <ul class="dropdown-menu pull-right" role="menu">
+              <li><a href="javascript:void(0)">Hide this</a></li>
+              <li><a href="javascript:void(0)">Report</a></li>
+            </ul>
+          </div>
+          <div class="col-md-12">
+            <div class="media">
+              <div class="media-left"> <a href="javascript:void(0)"> <img src="https://bootdey.com/img/Content/avatar/avatar3.png" alt="" class="media-object"> </a> </div>
+              <div class="media-body">
+                <h4 class="media-heading">Lucky Sans<br>
+                  <small><i class="fa fa-clock-o"></i> Yesterday, 2:00 am</small> </h4>
+                <p>Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin commodo. Cras purus odio. </p>
+
+                <ul class="nav nav-pills pull-left ">
+                  <li><a href="" title=""><i class="glyphicon glyphicon-thumbs-up"></i> 2015</a></li>
+                  <li><a href="" title=""><i class=" glyphicon glyphicon-comment"></i> 25</a></li>
+                  <li><a href="" title=""><i class="glyphicon glyphicon-share-alt"></i> 15</a></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-12 commentsblock border-top">
+            <div class="media">
+              <div class="media-left"> <a href="javascript:void(0)"> <img alt="64x64" src="https://bootdey.com/img/Content/avatar/avatar1.png" class="media-object"> </a> </div>
+              <div class="media-body">
+                <h4 class="media-heading">Astha Smith</h4>
+                <p>Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin commodo. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis. Fusce condimentum nunc ac nisi vulputate fringilla. Donec lacinia congue felis in faucibus.</p>
+              </div>
+            </div>
+            <div class="media">
+              <div class="media-left"> <a href="javascript:void(0)"> <img alt="64x64" src="https://bootdey.com/img/Content/avatar/avatar1.png" class="media-object"> </a> </div>
+              <div class="media-body">
+                <h4 class="media-heading">Lucky Sans</h4>
+                <p>Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin commodo. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis. Fusce condimentum nunc ac nisi vulputate fringilla. Donec lacinia congue felis in faucibus. </p>
+                <div class="media">
+                  <div class="media-left"> <a href="javascript:void(0)"> <img alt="64x64" src="https://bootdey.com/img/Content/avatar/avatar1.png" class="media-object"> </a> </div>
+                  <div class="media-body">
+                    <h4 class="media-heading">Astha Smith</h4>
+                    <p>Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin commodo. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis. Fusce condimentum nunc ac nisi vulputate fringilla. Donec lacinia congue felis in faucibus.</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="panel panel-default">
+          <div class="btn-group pull-right postbtn">
+            <button type="button" class="dotbtn dropdown-toggle" data-toggle="dropdown" aria-expanded="false"> <span class="dots"></span> </button>
+            <ul class="dropdown-menu pull-right" role="menu">
+              <li><a href="javascript:void(0)">Hide this</a></li>
+              <li><a href="javascript:void(0)">Report</a></li>
+            </ul>
+          </div>
+          <div class="col-md-12">
+            <div class="media">
+              <div class="media-left"> <a href="javascript:void(0)"> <img src="https://bootdey.com/img/Content/avatar/avatar1.png" alt="" class="media-object"> </a> </div>
+              <div class="media-body">
+                <h4 class="media-heading"> Lucky Sans<br>
+                  <small><i class="fa fa-clock-o"></i> Yesterday, 2:00 am</small> </h4>
+                <p>Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin commodo. Cras purus odio. </p>
+                <ul class="nav nav-pills pull-left ">
+                  <li><a href="" title=""><i class="glyphicon glyphicon-thumbs-up"></i> 2015</a></li>
+                  <li><a href="" title=""><i class=" glyphicon glyphicon-comment"></i> 25</a></li>
+                  <li><a href="" title=""><i class="glyphicon glyphicon-share-alt"></i> 15</a></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-12 border-top">
+            <div class="status-upload">
+              <form>
+                <label>Comment</label>
+                <textarea class="form-control" placeholder="Comment here"></textarea>
+                <br>
+                <ul class="nav nav-pills pull-left ">
+                  <li><a title=""><i class="glyphicon glyphicon-bullhorn"></i></a></li>
+                  <li><a title=""><i class=" glyphicon glyphicon-facetime-video"></i></a></li>
+                  <li><a title=""><i class="glyphicon glyphicon-picture"></i></a></li>
+                </ul>
+                <button type="submit" class="btn btn-success pull-right"> Comment</button>
+              </form>
+            </div>
+            <!-- Status Upload  --> 
+            
+          </div>
+        </div>
+        <div class="panel panel-default">
+          <div class="btn-group pull-right postbtn">
+            <button type="button" class="dotbtn dropdown-toggle" data-toggle="dropdown" aria-expanded="false"> <span class="dots"></span> </button>
+            <ul class="dropdown-menu pull-right" role="menu">
+              <li><a href="javascript:void(0)">Hide this</a></li>
+              <li><a href="javascript:void(0)">Report</a></li>
+            </ul>
+          </div>
+          <div class="col-md-12">
+            <div class="media">
+              <div class="media-left"> <a href="javascript:void(0)"> <img src="https://bootdey.com/img/Content/avatar/avatar1.png" alt="" class="media-object"> </a> </div>
+              <div class="media-body">
+                <h4 class="media-heading"> Lucky Sans<br>
+                  <small><i class="fa fa-clock-o"></i> Yesterday, 2:00 am</small> </h4>
+                <p>Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin commodo. Cras purus odio. </p>
+                <ul class="nav nav-pills pull-left ">
+                  <li><a href="" title=""><i class="glyphicon glyphicon-thumbs-up"></i> 2015</a></li>
+                  <li><a href="" title=""><i class=" glyphicon glyphicon-comment"></i> 25</a></li>
+                  <li><a href="" title=""><i class="glyphicon glyphicon-share-alt"></i> 15</a></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-12 commentsblock border-top">
+            <div class="media">
+              <div class="media-left"> <a href="javascript:void(0)"> <img alt="64x64" src="https://bootdey.com/img/Content/avatar/avatar1.png" class="media-object"> </a> </div>
+              <div class="media-body">
+                <h4 class="media-heading">Astha Smith</h4>
+                <p>Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin commodo. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis. Fusce condimentum nunc ac nisi vulputate fringilla. Donec lacinia congue felis in faucibus. </p>
+                <div class="media">
+                  <div class="media-left"> <a href="javascript:void(0)"> <img alt="64x64" src="https://bootdey.com/img/Content/avatar/avatar1.png" class="media-object"> </a> </div>
+                  <div class="media-body">
+                    <h4 class="media-heading">Nested Lucky Sans</h4>
+                    <p>Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin commodo. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis. Fusce condimentum nunc ac nisi vulputate fringilla. Donec lacinia congue felis in faucibus.</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="panel panel-default">
+          <div class="btn-group pull-right postbtn">
+            <button type="button" class="dotbtn dropdown-toggle" data-toggle="dropdown" aria-expanded="false"> <span class="dots"></span> </button>
+            <ul class="dropdown-menu pull-right" role="menu">
+              <li><a href="javascript:void(0)">Hide this</a></li>
+              <li><a href="javascript:void(0)">Report</a></li>
+            </ul>
+          </div>
+          <div class="col-md-12">
+            <div class="media">
+              <div class="media-left"> <a href="javascript:void(0)"> <img src="https://bootdey.com/img/Content/avatar/avatar1.png" alt="" class="media-object"> </a> </div>
+              <div class="media-body">
+                <h4 class="media-heading"> Lucky Sans<br>
+                  <small><i class="fa fa-clock-o"></i> Yesterday, 2:00 am</small> </h4>
+                <p>Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin commodo. Cras purus odio. </p>
+                <ul class="nav nav-pills pull-left ">
+                  <li><a href="" title=""><i class="glyphicon glyphicon-thumbs-up"></i> 2015</a></li>
+                  <li><a href="" title=""><i class=" glyphicon glyphicon-comment"></i> 25</a></li>
+                  <li><a href="" title=""><i class="glyphicon glyphicon-share-alt"></i> 15</a></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="panel panel-default">
+          <div class="btn-group pull-right postbtn">
+            <button type="button" class="dotbtn dropdown-toggle" data-toggle="dropdown" aria-expanded="false"> <span class="dots"></span> </button>
+            <ul class="dropdown-menu pull-right" role="menu">
+              <li><a href="javascript:void(0)">Hide this</a></li>
+              <li><a href="javascript:void(0)">Report</a></li>
+            </ul>
+          </div>
+          <div class="col-md-12">
+            <div class="media">
+              <div class="media-left"> <a href="javascript:void(0)"> <img src="https://bootdey.com/img/Content/avatar/avatar1.png" alt="" class="media-object"> </a> </div>
+              <div class="media-body">
+                <h4 class="media-heading"> Lucky Sans<br>
+                  <small><i class="fa fa-clock-o"></i> Yesterday, 2:00 am</small> </h4>
+                <p>Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin commodo. Cras purus odio. </p>
+                <ul class="nav nav-pills pull-left ">
+                  <li><a href="" title=""><i class="glyphicon glyphicon-thumbs-up"></i> 2015</a></li>
+                  <li><a href="" title=""><i class=" glyphicon glyphicon-comment"></i> 25</a></li>
+                  <li><a href="" title=""><i class="glyphicon glyphicon-share-alt"></i> 15</a></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
+</div>
 </div>
 
 <style type="text/css">
-
-body{
-    margin-top:20px;
-    background:#e7ebf2;    
+body {
+    font-family: 'Roboto', sans-serif;
+    font-weight: 400;
+    background-color: #f0f3f5;
+    margin-top:40px;
 }
-/*
-Profile
-*/
-.si-border-round {
-    -webkit-border-radius: 50%;
-    -moz-border-radius: 50%;
-    -ms-border-radius: 50%;
-    border-radius: 50%;
+/*==============================*/
+/*====== siderbar user profile =====*/
+/*==============================*/
+.nav>li>a.userdd {
+    padding: 5px 15px
+}
+.userprofile {
+    width: 100%;
+	float: left;
+	clear: both;
+	margin: 40px auto
+}
+.userprofile .userpic {
+	height: 100px;
+	width: 100px;
+	clear: both;
+	margin: 0 auto;
+	display: block;
+	border-radius: 100%;
+	box-shadow: 0px 3px 10px 0 rgba(0, 0, 0, 0.15);
+	-moz-box-shadow: 0px 3px 10px 0 rgba(0, 0, 0, 0.15);
+	-webkit-box-shadow: 0px 3px 10px 0 rgba(0, 0, 0, 0.15);
+	-ms-box-shadow: 0px 3px 10px 0 rgba(0, 0, 0, 0.15);
+	position: relative; 
+}
+.userprofile .userpic .userpicimg {
+	height: auto;
+	width: 100%;
+	border-radius: 100%;
+}
+.username {
+	font-weight: 400;
+	font-size: 20px;
+	line-height: 20px;
+	color: #000000;
+	margin-top: 20px;
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
+}
+.username+p {
+	color: #607d8b;
+	font-size: 13px;
+	line-height: 15px;
+	white-space: nowrap;
+	text-overflow: ellipsis;
+	overflow: hidden;
+}
+.settingbtn {
+	height: 30px;
+	width: 30px;
+	border-radius: 30px;
+	display: block;
+	position: absolute;
+	bottom: 0px;
+	right: 0px;
+	line-height: 30px;
+	vertical-align: middle;
+	text-align: center;
+	padding: 0;
+	box-shadow: 0px 2px 5px 0 rgba(0, 0, 0, 0.15);
+	-moz-box-shadow: 0px 2px 5px 0 rgba(0, 0, 0, 0.15);
+	-webkit-box-shadow: 0px 2px 5px 0 rgba(0, 0, 0, 0.15);
+	-ms-box-shadow: 0px 2px 5px 0 rgba(0, 0, 0, 0.15);
+}
+.userprofile.small {
+	width: auto;
+	clear: both;
+	margin: 0px auto;
+}
+.userprofile.small .userpic {
+	height: 40px;
+	width: 40px;
+	margin: 0 10px 0 0;
+	display: block;
+	border-radius: 100%;
+	box-shadow: 0px 3px 10px 0 rgba(0, 0, 0, 0.15);
+	-moz-box-shadow: 0px 3px 10px 0 rgba(0, 0, 0, 0.15);
+	-webkit-box-shadow: 0px 3px 10px 0 rgba(0, 0, 0, 0.15);
+	-ms-box-shadow: 0px 3px 10px 0 rgba(0, 0, 0, 0.15);
+	position: relative;
+	float: left;
+}
+.userprofile.small .textcontainer {
+	float: left;
+	max-width: 100px;
+	padding: 0
+}
+.userprofile.small .userpic .userpicimg {
+	min-height: 100%;
+	width: 100%;
+	border-radius: 100%;
+}
+.userprofile.small .username {
+	font-weight: 400;
+	font-size: 16px;
+	line-height: 21px;
+	color: #000000;
+	margin: 0px;
+	float: left;
+	width: 100%;
+}
+.userprofile.small .username+p {
+	color: #607d8b;
+	font-size: 13px;
+	float: left;
+	width: 100%;
+	margin: 0;
+}
+/*==============================*/
+/*====== Social Profile css =====*/
+/*==============================*/
+.countlist h3 {
+	margin: 0;
+	font-weight: 400;
+	line-height: 28px;
+}
+.countlist {
+	text-transform: uppercase
+}
+.countlist li {
+	padding: 15px 30px 15px 0;
+	font-size: 14px;
+	text-align: left;
+}
+.countlist li small {
+	font-size: 12px;
+	margin: 0
+}
+.followbtn {
+	float: right;
+	margin: 22px;
+}
+.userprofile.social {
+	background: url(https://www.bootdey.com/img/Content/flores-amarillas-wallpaper.jpeg) no-repeat top center;
+	background-size: 100%;
+	padding: 50px 0;
+	margin: 0
+}
+.userprofile.social .username {
+	color: #ffffff
+}
+.userprofile.social .username+p {
+	color: #ffffff;
+	opacity: 0.8
+}
+.postbtn {
+	position: absolute;
+	right: 5px;
+	top: 5px;
+	z-index: 9
+}
+.status-upload {
+	width: 100%;
+	float: left;
+	margin-bottom: 15px
+}
+.posttimeline .panel {
+	margin-bottom: 15px
+}
+.commentsblock {
+	background: #f8f9fb;
+}
+.nopaddingbtm {
+	margin-bottom: 0
+}
+/*==============================*/
+/*====== Recently connected  heading =====*/
+/*==============================*/
+.memberblock {
+	width: 100%;
+	float: left;
+	clear: both;
+	margin-bottom: 15px
+}
+.member {
+	width: 24%;
+	float: left;
+	margin: 2px 1% 2px 0;
+	background: #ffffff;
+	border: 1px solid #d8d0c3;
+	padding: 3px;
+	position: relative;
+	overflow: hidden
+}
+.memmbername {
+	position: absolute;
+	bottom: -30px;
+	background: rgba(0, 0, 0, 0.8);
+	color: #ffffff;
+	line-height: 30px;
+	padding: 0 5px;
+	white-space: nowrap;
+	text-overflow: ellipsis;
+	overflow: hidden;
+	width: 100%;
+	font-size: 11px;
+	transition: 0.5s ease all;
+}
+.member:hover .memmbername {
+	bottom: 0
+}
+.member img {
+	width: 100%;
+	transition: 0.5s ease all;
+}
+.member:hover img {
+	opacity: 0.8;
+	transform: scale(1.2)
 }
 
-.social-icon-sm {
-    margin: 0 5px 5px 0;
+.panel-default>.panel-heading {
+    color: #607D8B;
+    background-color: #ffffff;
+    font-weight: 400;
+    font-size: 15px;
+    border-radius: 0;
+    border-color: #e1eaef;
+}
+
+
+
+.btn-circle {
     width: 30px;
     height: 30px;
-    font-size: 18px;
-    line-height: 30px !important;
-    color: #555;
-    text-shadow: none;
-    border-radius: 3px;
-    overflow: hidden;
+    padding: 6px 0;
+    border-radius: 15px;
+    text-align: center;
+    font-size: 12px;
+    line-height: 1.428571429;
+}
+
+.page-header.small {
+    position: relative;
+    line-height: 22px;
+    font-weight: 400;
+    font-size: 20px;
+}
+
+.favorite i {
+    color: #eb3147;
+}
+
+.btn i {
+    font-size: 17px;
+}
+
+.panel {
+    box-shadow: 0px 2px 10px 0 rgba(0, 0, 0, 0.05);
+    -moz-box-shadow: 0px 2px 10px 0 rgba(0, 0, 0, 0.05);
+    -webkit-box-shadow: 0px 2px 10px 0 rgba(0, 0, 0, 0.05);
+    -ms-box-shadow: 0px 2px 10px 0 rgba(0, 0, 0, 0.05);
+    transition: all ease 0.5s;
+    -moz-transition: all ease 0.5s;
+    -webkit-transition: all ease 0.5s;
+    -ms-transition: all ease 0.5s;
+    margin-bottom: 35px;
+    border-radius: 0px;
+    position: relative;
+    border: 0;
+    display: inline-block;
+    width: 100%;
+}
+
+.panel-footer {
+    padding: 10px 15px;
+    background-color: #ffffff;
+    border-top: 1px solid #eef2f4;
+    border-bottom-right-radius: 0;
+    border-bottom-left-radius: 0;
+    color: #607d8b;
+}
+
+.panel-blue {
+    color: #ffffff;
+    background-color: #03A9F4;
+}
+
+.panel-red.userlist .username, .panel-green.userlist .username, .panel-yellow.userlist .username, .panel-blue.userlist .username {
+    color: #ffffff;
+}
+
+.panel-red.userlist p, .panel-green.userlist p, .panel-yellow.userlist p, .panel-blue.userlist p {
+    color: rgba(255, 255, 255, 0.8);
+}
+
+.panel-red.userlist p a, .panel-green.userlist p a, .panel-yellow.userlist p a, .panel-blue.userlist p a {
+    color: rgba(255, 255, 255, 0.8);
+}
+
+.progress-bar-success, .status.active, .panel-green, .panel-green > .panel-heading, .btn-success, .fc-event, .badge.green, .event_green {
+    color: white;
+    background-color: #8BC34A;
+}
+
+.progress-bar-warning, .panel-yellow, .status.pending, .panel-yellow > .panel-heading, .btn-warning, .fc-unthemed .fc-today, .badge.yellow, .event_yellow {
+    color: white;
+    background-color: #FFC107;
+}
+
+.progress-bar-danger, .panel-red, .status.inactive, .panel-red > .panel-heading, .btn-danger, .badge.red, .event_red {
+    color: white;
+    background-color: #F44336;
+}
+
+.media-object {
+    max-width: 50px;
+    border-radius: 50px;
+    box-shadow: 0px 3px 10px 0 rgba(0, 0, 0, 0.15);
+    -moz-box-shadow: 0px 3px 10px 0 rgba(0, 0, 0, 0.15);
+    -webkit-box-shadow: 0px 3px 10px 0 rgba(0, 0, 0, 0.15);
+    -ms-box-shadow: 0px 3px 10px 0 rgba(0, 0, 0, 0.15);
+}
+
+.media:first-child {
+    margin-top: 15px;
+}
+
+.media-object {
+    display: block;
+}
+
+.dotbtn {
+    height: 40px;
+    width: 40px;
+    background: none;
+    border: 0;
+    line-height: 40px;
+    vertical-align: middle;
+    padding: 0;
+    margin-right: -15px;
+}
+
+.dots {
+    height: 4px;
+    width: 4px;
+    position: relative;
+    display: block;
+    background: rgba(0,0,0,0.5);
+    border-radius: 2px;
+    margin: 0 auto;
+}
+
+.dots:after, .dots:before {
+    content: " ";
+    height: 4px;
+    width: 4px;
+    position: absolute;
+    display: inline-block;
+    background: rgba(0,0,0,0.5);
+    border-radius: 2px;
+    top: -7px;
+    left: 0;
+}
+
+.dots:after {
+    content: " ";
+    top: auto;
+    bottom: -7px;
+    left: 0;
+}
+
+.photolist img {
+    width: 100%;
+}
+
+.photolist {
+    background: #e1eaef;
+    padding-top: 15px;
+    padding-bottom: 15px;
+}
+
+.profilegallery .grid-item a {
+    height: 100%;
+    display: block;
+}
+
+.grid a {
+    width: 100%;
     display: block;
     float: left;
-    text-align: center;
-    border: 1px solid #AAA;
-}
-.tabs-admin > .nav-item > .nav-link.active {
-    border-color: #0073ff;
-    color: #0073ff;
 }
 
-.tabs-admin > .nav-item > .nav-link {
-    padding: 10px 15px;
-    color: #555;
-    font-weight: 600;
-    text-transform: capitalize;
-    margin-bottom: -2px;
-    border-bottom: 2px solid transparent;
+.media-body {
+    color: #607D8B;
+    overflow: visible;
 }
-.act-content span.text-small {
-    display: block;
-    color: #999;
-    margin-bottom: 10px;
-    font-size: 12px;
-}
-
-.text-small {
-    font-size: 12px !important;
-}
-.admin-tab-content {
-    padding: 10px 15px;
-}
-
-.pt30 {
-    padding-top: 30px !important;
-}
-.card .card-title {
-    -ms-flex: 1 1 auto;
-    flex: 1 1 auto;
-    min-height: 28px;
-    margin: 0;
-    font-size: .9rem;
-    font-weight: 600;
-    line-height: 28px;
-}
-
-.mb20 {
-    margin-bottom: 20px !important;
-}
-.pb20 {
-    padding-bottom: 20px !important;
-}
-
-.pt20 {
-    padding-top: 20px !important;
-}
-.text-small {
-    font-size: 12px !important;
-}
-
-.text-muted {
-    color: #999 !important;
-}
-.card .card-content {
-    padding: 15px 15px;
-}
-.profile-header {
-  background-size: cover;
-  position: relative;
-  overflow: hidden; }
-  .profile-header .img-fluid.rounded-circle {
-    max-width: 100px;
-    margin: 0 auto;
-    margin-bottom: 20px;
-    display: block; }
-
-.activity-list > li {
-  border-bottom: 1px solid #eee;
-  padding-bottom: 20px;
-  margin-bottom: 20px; }
-
-.activity-list .float-left {
-  margin-right: 10px;
-  width: 40px;
-  height: 40px;
-  float: left;
-  display: block;
-  border-radius: 50%;
-  background-color: #eee;
-  font-size: 20px;
-  line-height: 100%;
-  line-height: 43px;
-  text-align: center; }
-  .activity-list .float-left a {
-    display: inline-block;
-    color: #999; }
-
-.act-content {
-  overflow: hidden; }
-  .act-content span.text-small {
-    display: block;
-    color: #999;
-    margin-bottom: 10px;
-    font-size: 12px; }
 </style>
 
 <script type="text/javascript">
-
 
 </script>
 </body>

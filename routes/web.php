@@ -4,6 +4,7 @@ use App\Http\Controllers\Auth\RegisterController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\ArticleController;
 use App\Http\Controllers\SuggestionController;
+use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\VaccineController;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Auth;
@@ -20,7 +21,7 @@ use Illuminate\Support\Facades\Auth;
 */
 
 Route::get('/test', function(){
-    return view('pages.suggestion.index');
+    return view('pages.profile.index');
 });
 
 // Route Auth untuk login, Register dan Logout
@@ -32,6 +33,10 @@ Route::get('/register-dokter', [RegisterController::class, 'dokterIndex'])->name
 //Menu
 Route::middleware('auth')->group(function () {   
     Route::get('/', [HomeController::class, 'index'])->name('homepage');
+
+    Route::group(['prefix' => 'profil','as' => 'profile.'], function () {  
+        Route::get('', [ProfileController::class, 'index'])->name('index');
+    });
 
     Route::group(['prefix' => 'artikel','as' => 'article.'], function () {  
         Route::get('', [ArticleController::class, 'index'])->name('index');
@@ -55,56 +60,4 @@ Route::middleware('auth')->group(function () {
     Route::group(['prefix' => 'vaksinasi','as' => 'vaccine.'], function () {
         Route::get('', [VaccineController::class, 'index'])->name('index');
     });
-});
-
-
-// Route Page Masyarakat
-Route::middleware(['can:isMasyarakat'])->group(function () {        
-    Route::prefix('post-pengalaman')->group(function () {   
-
-    });
-    Route::prefix('artikel')->group(function () {  
-
-    });
-    Route::prefix('saran')->group(function () {  
-
-    });
-    Route::prefix('vaksinasi')->group(function () {  
-
-    });
-});
-
-// Route Page Dokter
-Route::middleware(['can:isDokter'])->group(function () {        
-    Route::prefix('post-pengalaman')->group(function () {   
-
-    });
-    Route::prefix('artikel')->group(function () {  
-
-    });
-    Route::prefix('saran')->group(function () {  
-
-    });
-    Route::prefix('vaksinasi')->group(function () {  
-
-    });
-});
-
-// Route Page Admin
-Route::middleware(['can:isAdmin'])->group(function () {        
-    Route::prefix('admin')->group(function () {        
-        Route::prefix('post-pengalaman')->group(function () {   
-
-        });
-        Route::prefix('artikel')->group(function () {  
-    
-        });
-        Route::prefix('saran')->group(function () {  
-    
-        });
-        Route::prefix('vaksinasi')->group(function () {  
-    
-        });
-    });
-
 });

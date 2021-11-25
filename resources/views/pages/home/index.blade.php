@@ -1,5 +1,7 @@
 @extends('layouts.app')
 
+@section('title', '')
+
 @section('content')
     <!-- Slider Start -->
     <section class="banner">
@@ -11,7 +13,7 @@
                         <span class="text-uppercase text-sm letter-spacing ">WeSurviveCovid</span>
                         <h1 class="mb-3 mt-3">Solusi Anda Di Masa Pandemi Ini</h1>
 
-                        <p class="mb-4 pr-5">A repudiandae ipsam labore ipsa voluptatum quidem quae laudantium quisquam aperiam maiores sunt fugit, deserunt rem suscipit placeat.</p>
+                        <p class="mb-4 pr-5">Berbagai Informasi Tentang Postingan, Artikel, Saran, & Tempat Vaksinasi Terkait Permasalahan Pandemi Covid-19 Dapat Dilihat Semua Pada WeSurviveCovid!</p>
                     </div>
                 </div>
             </div>
@@ -28,8 +30,7 @@
                             </div>
                             <span>24 Jam Siap Melayani</span>
                             <h4 class="mb-3">Bantuan Covid Dari Dokter</h4>
-                            <p class="mb-4">Get ALl time support for emergency.We have introduced the principle of family medicine.</p>
-                            <a href="appoinment.html" class="btn btn-main btn-round-full">Segera Lihat Tips anda Tricks</a>
+                            <p class="mb-4">Dapatkan bantuan dari banyak dokter bersertifikat kami.</p>
                         </div>
 
                         <div class="feature-item mb-5 mb-lg-0">
@@ -51,7 +52,7 @@
                             </div>
                             <span>Sharing Sesama</span>
                             <h4 class="mb-3">Postingan Pengalaman Covid</h4>
-                            <p>Get ALl time support for emergency.We have introduced the principle of family medicine.Get Conneted with us for any urgency .</p>
+                            <p>Dapatkan berbagai macam informasi bermanfaat untuk mempermudah kehidupan di masa pandemi.</p>
                         </div>
                     </div>
                 </div>
@@ -64,50 +65,67 @@
         <div class="container">
             <div class="row align-items-center">
                 <div class="col-lg">
-                    <div class="about-img mt-4 mt-lg-0">
-                        <img src="{{ asset('images/about/img-3.jpg') }} " alt="" class="img-fluid">
-                    </div>
-                </div>
-                <div class="col-lg">
                     <div class="about-content pl-4 mt-4 mt-lg-0">
                         <h2 class="title-color">Artikel</h2>
-                        <p class="mt-4 mb-5">We provide best leading medicle service Nulla perferendis veniam deleniti ipsum officia dolores repellat laudantium obcaecati neque.</p>
+                        <p class="mt-4 mb-5">Kami menyediakan fitur dimana anda dapat melihat artikel mengenai saran dan bantuan serta fakta-fakta menarik tentang Covid-19 yang disajikan oleh admin serta dokter-dokter yang terpercaya dan bersertifikat.</p>
 
-                        <a href="{{ route('article.index') }}" class="btn btn-main-2 btn-round-full btn-icon">Services<i class="icofont-simple-right ml-3"></i></a>
+                        <a href="{{ route('article.index') }}" class="btn btn-main-2 btn-round-full btn-icon">Artikel<i class="icofont-simple-right ml-3"></i></a>
+                    </div>
+                </div>
+                <div class="col-lg">
+                    <div class="about-img mt-4 mt-lg-0">
                     </div>
                 </div>
             </div>
         </div>
         <div class="container">
             <div class="row align-items-center">
+                <div class="col-lg">
+                    <div class="about-img mt-4 mt-lg-0">
+                    </div>
+                </div>
                 <div class="col-lg">
                     <div class="about-content pl-4 mt-4 mt-lg-0">
-                        <h2 class="title-color">Postingan</h2>
-                        <p class="mt-4 mb-5">We provide best leading medicle service Nulla perferendis veniam deleniti ipsum officia dolores repellat laudantium obcaecati neque.</p>
+                        <div class="d-flex" style="flex-direction: column; justify-content: end; align-items: end">
+                            <h2 class="title-color mr-0 ml-auto">Postingan</h2>
+                            <p class="mt-4 mb-5" style="text-align: end">Postingan adalah wadah dimana kami dapat menyediakan pengalaman dari orang yang pernah terjangkit Covid-19 ataupun orang yang serdang terjangkit.</p>
 
-                        <a href="service.html" class="btn btn-main-2 btn-round-full btn-icon">Services<i class="icofont-simple-right ml-3"></i></a>
-                    </div>
-                </div>
-                <div class="col-lg">
-                    <div class="about-img mt-4 mt-lg-0">
-                        <img src="{{ asset('images/about/img-3.jpg') }} " alt="" class="img-fluid">
+                            <a href="service.html" class="btn btn-main-2 btn-round-full btn-icon">Postingan<i class="icofont-simple-right ml-3"></i></a>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
         <div class="container">
             <div class="row align-items-center">
-                <div class="col-lg">
-                    <div class="about-img mt-4 mt-lg-0">
-                        <img src="{{ asset('images/about/img-3.jpg') }}" alt="" class="img-fluid">
-                    </div>
-                </div>
                 <div class="col-lg">
                     <div class="about-content pl-4 mt-4 mt-lg-0">
                         <h2 class="title-color">Tempat <br>Vaksinasi</h2>
-                        <p class="mt-4 mb-5">We provide best leading medicle service Nulla perferendis veniam deleniti ipsum officia dolores repellat laudantium obcaecati neque.</p>
+                        <p class="mt-4 mb-5">Temukan tempat vaksinasi di sekitar tempat anda berada dengan mudah dengan fitur pencarian lokasi vaksinasi kami.</p>
 
-                        <a href="{{ route('vaccine.index') }}" class="btn btn-main-2 btn-round-full btn-icon">Services<i class="icofont-simple-right ml-3"></i></a>
+                        <a href="{{ route('vaccine.index') }}" class="btn btn-main-2 btn-round-full btn-icon">Cari Tempat<i class="icofont-simple-right ml-3"></i></a>
+                    </div>
+                </div>
+                <div class="col-lg">
+                    <div class="about-img mt-4 mt-lg-0">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg">
+                    <div class="about-img mt-4 mt-lg-0">
+                    </div>
+                </div>
+                <div class="col-lg">
+                    <div class="about-content pl-4 mt-4 mt-lg-0">
+                        <div class="d-flex" style="flex-direction: column; justify-content: end; align-items: end">
+                            <h2 class="title-color mr-0 ml-auto">Saran</h2>
+                            <p class="mt-4 mb-5" style="text-align: end">Wadah dimana anda dapat melihat berbagai macam saran yang tentunya akan membantu anda dalam menjalani pandemi Covid-19.</p>
+
+                            <a href="{{ route('suggestion.index') }}" class="btn btn-main-2 btn-round-full btn-icon">Saran<i class="icofont-simple-right ml-3"></i></a>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -121,7 +139,6 @@
                     <div class="section-title text-center">
                         <h2>Penghargaan Kami</h2>
                         <div class="divider mx-auto my-4"></div>
-                        <p>Lets know moreel necessitatibus dolor asperiores illum possimus sint voluptates incidunt molestias nostrum laudantium. Maiores porro cumque quaerat.</p>
                     </div>
                 </div>
             </div>
