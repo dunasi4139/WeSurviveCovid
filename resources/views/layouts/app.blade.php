@@ -59,7 +59,7 @@
                                     <a style="cursor: pointer" class="nav-link">{{ trans('global.nav.article') }}</a>
                                     <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
                                         <li><a class="dropdown-item" href="{{ route('article.index') }}">Lihat</a></li>
-                                        <li><a class="dropdown-item" href="#">Buat Baru</a></li>
+                                        <li><a class="dropdown-item" href="#">Buat Artikel Baru</a></li>
                                     </ul>
                                 </li>
                         <li class="nav-item">
