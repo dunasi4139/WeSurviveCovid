@@ -19,7 +19,7 @@ use Illuminate\Support\Facades\Auth;
 */
 
 Route::get('/test', function(){
-    return view('vaksinasi');
+    return view('pages.article.show');
 });
 
 // Route Auth untuk login, Register dan Logout
@@ -34,6 +34,8 @@ Route::middleware('auth')->group(function () {
 
     Route::group(['prefix' => 'artikel','as' => 'article.'], function () {  
         Route::get('', [ArticleController::class, 'index'])->name('index');
+
+        Route::get('/form', [ArticleController::class, 'index'])->middleware(['can:isDokter'])->name('create');
     });
     
     Route::group(['prefix' => 'vaksinasi','as' => 'vaccine.'], function () {

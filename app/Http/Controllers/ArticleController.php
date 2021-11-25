@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Article;
 use Illuminate\Http\Request;
 
 class ArticleController extends Controller
@@ -13,7 +14,8 @@ class ArticleController extends Controller
      */
     public function index()
     {
-        return view('pages.article.index');
+        $articles = Article::all();
+        return view('pages.article.index', compact('articles'));
     }
 
     /**
@@ -23,7 +25,7 @@ class ArticleController extends Controller
      */
     public function create()
     {
-        //
+        return view('pages.article.create');
     }
 
     /**

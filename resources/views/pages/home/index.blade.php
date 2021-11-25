@@ -73,7 +73,7 @@
                         <h2 class="title-color">Artikel</h2>
                         <p class="mt-4 mb-5">We provide best leading medicle service Nulla perferendis veniam deleniti ipsum officia dolores repellat laudantium obcaecati neque.</p>
 
-                        <a href="service.html" class="btn btn-main-2 btn-round-full btn-icon">Services<i class="icofont-simple-right ml-3"></i></a>
+                        <a href="{{ route('article.index') }}" class="btn btn-main-2 btn-round-full btn-icon">Services<i class="icofont-simple-right ml-3"></i></a>
                     </div>
                 </div>
             </div>
@@ -107,7 +107,7 @@
                         <h2 class="title-color">Tempat <br>Vaksinasi</h2>
                         <p class="mt-4 mb-5">We provide best leading medicle service Nulla perferendis veniam deleniti ipsum officia dolores repellat laudantium obcaecati neque.</p>
 
-                        <a href="service.html" class="btn btn-main-2 btn-round-full btn-icon">Services<i class="icofont-simple-right ml-3"></i></a>
+                        <a href="{{ route('vaccine.index') }}" class="btn btn-main-2 btn-round-full btn-icon">Services<i class="icofont-simple-right ml-3"></i></a>
                     </div>
                 </div>
             </div>
