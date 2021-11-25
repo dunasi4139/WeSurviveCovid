@@ -17,7 +17,6 @@ class DatabaseSeeder extends Seeder
             UserSeeder::class,
             ArtikelSeeder::class,
             VaksinasiSeeder::class,   
-            ProvinceSeeder::class,    
             ProvinceSeeder::class,        
         ]);
     }

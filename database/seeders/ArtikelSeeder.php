@@ -14,7 +14,7 @@ class ArtikelSeeder extends Seeder
      */
     public function run()
     {
-        DB::table('artikel')->insert([
+        DB::table('articles')->insert([
             [
                 'judul' => 'RS selalu di hati',
                 'gambar' => 'images/about/1.png',

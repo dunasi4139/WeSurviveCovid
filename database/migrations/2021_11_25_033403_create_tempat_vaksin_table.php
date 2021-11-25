@@ -22,8 +22,6 @@ class CreateTempatVaksinTable extends Migration
             $table->string('jenis');
             $table->integer('province_id');
             $table->timestamps();
-
-            $table->foreign('province_id')->references('id')->on('provinces');
         });
     }
 
