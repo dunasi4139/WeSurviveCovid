@@ -57,9 +57,9 @@
             <div class="col-lg-4 col-md-6 col-sm-6">
                 <div class="service-block mb-5">
                     <img src="images/service/service-1.jpg" alt="" class="img-fluid">
-                    <div class="content">
+                    <div class="content h-auto">
                         <h4 class="mt-4 mb-2 title-color">{{ $content->judul }}</h4>
-                        <p class="mb-4 ellipsis">{{ $content->isi }}</p>
+                        <p class="mb-4 flex-wrap">{{ $content->isi }}</p>
                     </div>
                     <div class="d-flex">
                         <a href="" target="_blank" class="p-2 px-3 btn btn-main btn-round-full">Lihat</a>
