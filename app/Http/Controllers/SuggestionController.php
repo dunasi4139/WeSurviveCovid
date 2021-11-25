@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\Suggestion;
 
 class SuggestionController extends Controller
 {
@@ -13,7 +14,9 @@ class SuggestionController extends Controller
      */
     public function index()
     {
-        return view('pages.suggestion.index');
+        $suggestions = Suggestion::all();
+
+        return view('pages.suggestion.index', 'sugesstion');
     }
 
     /**

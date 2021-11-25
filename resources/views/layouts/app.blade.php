@@ -63,7 +63,7 @@
                                     </ul>
                                 </li>
                         <li class="nav-item">
-                            <a style="cursor: pointer" class="nav-link">{{ trans('global.nav.suggestion') }}</a>
+                            <a style="cursor: pointer" href="{{ route('suggestion.index') }}" class="nav-link">{{ trans('global.nav.suggestion') }}</a>
                         </li>
                         <li class="nav-item">
                             <a style="cursor: pointer" href="{{ route('vaccine.index') }}" class="nav-link">{{ trans('global.nav.vaccine') }}</a>
