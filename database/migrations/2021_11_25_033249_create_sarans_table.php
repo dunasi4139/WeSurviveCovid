@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateSaranTable extends Migration
+class CreateSaransTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,14 +13,12 @@ class CreateSaranTable extends Migration
      */
     public function up()
     {
-        Schema::create('saran', function (Blueprint $table) {
-            $table->id()->autoIncrement();
+        Schema::create('sarans', function (Blueprint $table) {
+            $table->id();
             $table->string('judul');
             $table->string('gambar');
             $table->text('isi');
-            $table->integer('admin_id');
             $table->timestamps();
-
         });
     }
 
@@ -31,6 +29,6 @@ class CreateSaranTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('saran');
+        Schema::dropIfExists('sarans');
     }
 }
