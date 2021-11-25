@@ -13,6 +13,7 @@
                         <span class="text-uppercase text-sm letter-spacing ">WeSurviveCovid</span>
                         <h1 class="mb-3 mt-3">Solusi Anda Di Masa Pandemi Ini</h1>
 
+                        <p class="mb-4 pr-5">Berbagai Informasi Tentang Postingan, Artikel, Saran, & Tempat Vaksinasi Terkait Permasalahan Pandemi Covid-19 Dapat Dilihat Semua Pada WeSurviveCovid!</p>
                     </div>
                 </div>
             </div>
@@ -51,7 +52,7 @@
                             </div>
                             <span>Sharing Sesama</span>
                             <h4 class="mb-3">Postingan Pengalaman Covid</h4>
-                            <p>Dapatkan berbagaimacam informasi bermanfaat untuk mempermudah kehidupan di masa pandemi.</p>
+                            <p>Dapatkan berbagai macam informasi bermanfaat untuk mempermudah kehidupan di masa pandemi.</p>
                         </div>
                     </div>
                 </div>
@@ -66,7 +67,7 @@
                 <div class="col-lg">
                     <div class="about-content pl-4 mt-4 mt-lg-0">
                         <h2 class="title-color">Artikel</h2>
-                        <p class="mt-4 mb-5">Kami menyediakan fitur dimana anda dapat melihat artikel mengenai saran dan bantuan serta fakta fakta menarik tentang covid19 di sajikan oleh admin serta dokter dokter yang terpercaya serta tersertifikat.</p>
+                        <p class="mt-4 mb-5">Kami menyediakan fitur dimana anda dapat melihat artikel mengenai saran dan bantuan serta fakta-fakta menarik tentang Covid-19 yang disajikan oleh admin serta dokter-dokter yang terpercaya dan bersertifikat.</p>
 
                         <a href="{{ route('article.index') }}" class="btn btn-main-2 btn-round-full btn-icon">Artikel<i class="icofont-simple-right ml-3"></i></a>
                     </div>
@@ -87,7 +88,7 @@
                     <div class="about-content pl-4 mt-4 mt-lg-0">
                         <div class="d-flex" style="flex-direction: column; justify-content: end; align-items: end">
                             <h2 class="title-color mr-0 ml-auto">Postingan</h2>
-                            <p class="mt-4 mb-5" style="text-align: end">Postingan adalah wadah dimana kami dapat menyediakan pengalaman dari orang yang pernah terjangkit covid 19 ataupun orang yang serdang terjangkit.</p>
+                            <p class="mt-4 mb-5" style="text-align: end">Postingan adalah wadah dimana kami dapat menyediakan pengalaman dari orang yang pernah terjangkit Covid-19 ataupun orang yang serdang terjangkit.</p>
 
                             <a href="service.html" class="btn btn-main-2 btn-round-full btn-icon">Postingan<i class="icofont-simple-right ml-3"></i></a>
                         </div>
@@ -121,7 +122,7 @@
                     <div class="about-content pl-4 mt-4 mt-lg-0">
                         <div class="d-flex" style="flex-direction: column; justify-content: end; align-items: end">
                             <h2 class="title-color mr-0 ml-auto">Saran</h2>
-                            <p class="mt-4 mb-5" style="text-align: end">Wadah dimana anda dapat melihat berbagai macam saran yang teentunya akan membantu anda dalam menjalani pandemi covid19.</p>
+                            <p class="mt-4 mb-5" style="text-align: end">Wadah dimana anda dapat melihat berbagai macam saran yang tentunya akan membantu anda dalam menjalani pandemi Covid-19.</p>
 
                             <a href="{{ route('suggestion.index') }}" class="btn btn-main-2 btn-round-full btn-icon">Saran<i class="icofont-simple-right ml-3"></i></a>
                         </div>
