@@ -38,14 +38,13 @@ class ArticleController extends Controller
      */
     public function store(Request $request)
     {
-        $avatarPathDB = "";
-
         $request->validate([
             'title' => ['required', 'string'],
             'content' => ['required', 'string'],
+            'image' => 'image|mimes:jpg,jpeg,png'
         ]);
 
-        $article = Article::create([
+        Article::create([
             'dokter_id' => Auth::id(),
             'judul' => $request->title,
             'isi' => $request->content,

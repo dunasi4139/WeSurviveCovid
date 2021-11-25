@@ -19,7 +19,7 @@ use Illuminate\Support\Facades\Auth;
 */
 
 Route::get('/test', function(){
-    return view('pages.article.show');
+    return view('test');
 });
 
 // Route Auth untuk login, Register dan Logout
