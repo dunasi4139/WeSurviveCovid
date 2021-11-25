@@ -3,6 +3,7 @@
 use App\Http\Controllers\Auth\RegisterController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\ArticleController;
+use App\Http\Controllers\SuggestionController;
 use App\Http\Controllers\VaccineController;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Auth;
@@ -19,7 +20,7 @@ use Illuminate\Support\Facades\Auth;
 */
 
 Route::get('/test', function(){
-    return view('test');
+    return view('pages.suggestion.index');
 });
 
 // Route Auth untuk login, Register dan Logout
@@ -44,6 +45,13 @@ Route::middleware('auth')->group(function () {
         Route::put('/form/{id}', [ArticleController::class, 'edit'])->middleware(['can:isDokter'])->name('edit');   
     });
     
+
+    Route::group(['prefix' => 'saran','as' => 'suggestion.'], function () {
+        Route::get('', [SuggestionController::class, 'index'])->name('index');
+
+        Route::get('/{id}', [SuggestionController::class, 'show'])->name('show');
+    });
+
     Route::group(['prefix' => 'vaksinasi','as' => 'vaccine.'], function () {
         Route::get('', [VaccineController::class, 'index'])->name('index');
     });
