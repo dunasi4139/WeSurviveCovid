@@ -1,6 +1,6 @@
 @extends('layouts.app')
 
-@section('title', '| Profile')
+@section('title', 'Profile')
 
 @section('content')
 <section class="page-title bg-1">
@@ -9,14 +9,7 @@
         <div class="row">
             <div class="col-md-12">
                 <div class="block text-center">
-                    <span class="text-white">Doctor Details</span>
-                    <h1 class="text-capitalize mb-5 text-lg">Alexandar james</h1>
-
-                    <!-- <ul class="list-inline breadcumb-nav">
-                      <li class="list-inline-item"><a href="index.html" class="text-white">Home</a></li>
-                      <li class="list-inline-item"><span class="text-white">/</span></li>
-                      <li class="list-inline-item"><a href="#" class="text-white-50">Doctor Details</a></li>
-                    </ul> -->
+                    <h1 class="text-capitalize mb-5 text-lg">Profil</h1>
                 </div>
             </div>
         </div>
@@ -35,9 +28,9 @@
 
             <div class="col-lg-8 col-md-6">
                 <div class="doctor-details mt-4 mt-lg-0">
-                    <h2 class="text-md">Duwik Purnama Sidik</h2>
+                    <h2 class="text-md">{{ $user->name }}</h2>
                     <div class="divider my-4"></div>
-                    <p>Email : dwdadwda</p>
+                    <p>Email: {{ $user->email }}</p>
                </div>
             </div>
         </div>
