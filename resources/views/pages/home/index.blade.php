@@ -98,22 +98,6 @@
         <div class="container">
             <div class="row align-items-center">
                 <div class="col-lg">
-                    <div class="about-img mt-4 mt-lg-0">
-                    </div>
-                </div>
-                <div class="col-lg">
-                    <div class="about-content pl-4 mt-4 mt-lg-0">
-                        <h2 class="title-color">Saran</h2>
-                        <p class="mt-4 mb-5">Wadah dimana anda dapat melihat berbagai macam saran yang teentunya akan membantu anda dalam menjalani pandemi covid19.</p>
-
-                        <a href="{{ route('suggestion.index') }}" class="btn btn-main-2 btn-round-full btn-icon">Saran<i class="icofont-simple-right ml-3"></i></a>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="container">
-            <div class="row align-items-center">
-                <div class="col-lg">
                     <div class="about-content pl-4 mt-4 mt-lg-0">
                         <h2 class="title-color">Tempat <br>Vaksinasi</h2>
                         <p class="mt-4 mb-5">Temukan tempat vaksinasi di sekitar tempat anda berada dengan mudah dengan fitur pencarian lokasi vaksinasi kami.</p>
@@ -123,6 +107,24 @@
                 </div>
                 <div class="col-lg">
                     <div class="about-img mt-4 mt-lg-0">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg">
+                    <div class="about-img mt-4 mt-lg-0">
+                    </div>
+                </div>
+                <div class="col-lg">
+                    <div class="about-content pl-4 mt-4 mt-lg-0">
+                        <div class="d-flex" style="flex-direction: column; justify-content: end; align-items: end">
+                            <h2 class="title-color mr-0 ml-auto">Saran</h2>
+                            <p class="mt-4 mb-5" style="text-align: end">Wadah dimana anda dapat melihat berbagai macam saran yang teentunya akan membantu anda dalam menjalani pandemi covid19.</p>
+
+                            <a href="{{ route('suggestion.index') }}" class="btn btn-main-2 btn-round-full btn-icon">Saran<i class="icofont-simple-right ml-3"></i></a>
+                        </div>
                     </div>
                 </div>
             </div>
