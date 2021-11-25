@@ -21,7 +21,9 @@ class VaksinasiSeeder extends Seeder
                 'jadwal' => 'Senin - Kamis jam 9',
                 'alamat' => 'jl. Gatot Subroto No. xxx Desa xxx MLG',
                 'jenis' => 'Sinovac',
-                'province_id' => '35'
+                'province_id' => '35',
+                'created_at' => '2021-11-25 20:12:47',
+                'updated_at' => '2021-11-25 20:12:47',
             ],
             [
                 'nama' => 'RS di jiwa',
@@ -29,7 +31,9 @@ class VaksinasiSeeder extends Seeder
                 'jadwal' => 'Senin - Kamis jam 10',
                 'alamat' => 'jl. Gatot Subroto No. 100',
                 'jenis' => 'Sinovac',
-                'province_id' => '31'
+                'province_id' => '31',
+                'created_at' => '2021-11-24 20:12:47',
+                'updated_at' => '2021-11-24 20:12:47',
             ],
         ]);
     }
