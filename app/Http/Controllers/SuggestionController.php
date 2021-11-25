@@ -14,9 +14,9 @@ class SuggestionController extends Controller
      */
     public function index()
     {
-        $suggestions = Suggestion::all();
+        $suggestions = Suggestion::orderByDesc('created_at')->paginate(6);
 
-        return view('pages.suggestion.index', 'sugesstion');
+        return view('pages.suggestion.index', compact('suggestions'));
     }
 
     /**
@@ -48,7 +48,9 @@ class SuggestionController extends Controller
      */
     public function show($id)
     {
-        //
+        $suggestion = Suggestion::find($id);
+
+        return view('pages.suggestion.show', compact('suggestion'));
     }
 
     /**
