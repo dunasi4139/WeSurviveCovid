@@ -58,7 +58,7 @@
            <div class="card w-50" style="border-radius: 0">
                <div class="card-body">
                    <h4 class="mb-3 title-color">MBBS, M.D at University of Wyoming</h4>
-                   <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nisi doloremque harum, mollitia, soluta maxime porro veritatis fuga autem impedit corrupti aperiam sint, architecto, error nesciunt temporibus! Vel quod, dolor aliquam!</p>
+                   <p>Lorem, consectetur adipisicing elit. Nisi doloremque harum, mollitia, soluta maxime porro veritatis fuga autem impedit corrupti aperiam sint, architecto, error nesciunt temporibus! Vel quod, dolor aliquam!</p>
                    <div class="row p-2">
                        <a class="btn btn-primary btn-sm text-white m-1" style="cursor:pointer;">Edit</a>
                        <a class="btn btn-danger btn-sm text-white m-1" style="cursor:pointer;">Delete</a>
