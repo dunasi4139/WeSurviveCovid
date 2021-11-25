@@ -16,7 +16,8 @@ class ArticleController extends Controller
      */
     public function index()
     {
-        $articles = Article::all();
+        $articles = Article::orderByDesc('created_at')
+        ->paginate(6);
         return view('pages.article.index', compact('articles'));
     }
 
@@ -54,9 +55,13 @@ class ArticleController extends Controller
         $id = Article::latest()->first();
 
         if ($request->hasFile('image')) {
+            $file = $request->file('image');     
+            $nama_file = Auth::id()."_".time()."_".$file->getClientOriginalName();        
+            $tujuan_upload = 'images/articles/';
+            $file->move($tujuan_upload,$nama_file);
             $image = $request->file('image');
-            $avatarPath = $image->storeAs('/images/blog/', $id->id . '.jpg');
-            Article::where('id', '=', $id->id)->update(array('gambar' => $avatarPath));
+
+            Article::where('id', '=', $id->id)->update(array('gambar' => $tujuan_upload.$nama_file));
         }
 
         return redirect()->route('article.index');

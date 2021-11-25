@@ -20,12 +20,16 @@ class ArtikelSeeder extends Seeder
                 'gambar' => 'images/about/1.png',
                 'isi' => 'Isis nya panjangin donk biar sehat jasmani dan rohani',
                 'dokter_id' => 1,
+                'created_at' => '2021-11-25 20:12:47',
+                'updated_at' => '2021-11-25 20:12:47',
             ],
             [
                 'judul' => 'RS satu jiwa',
                 'gambar' => 'images/about/2.png',
                 'isi' => 'Isis nya panjangin donk biar sehat jasmani dan rohani',
                 'dokter_id' => 2,
+                'created_at' => '2021-11-24 20:12:47',
+                'updated_at' => '2021-11-24 20:12:47',
             ],
         ]);
     }
