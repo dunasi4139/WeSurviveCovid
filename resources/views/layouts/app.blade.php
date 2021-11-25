@@ -5,7 +5,7 @@
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <meta name="description" content="Orbitor,business,company,agency,modern,bootstrap4,tech,software">
 
-    <title>Novena- Health & Care Medical template</title>
+    <title>WeSurviveCovid @yield('title')</title>
 
     <!-- Favicon -->
     <link rel="shortcut icon" type="image/x-icon" href="{{ asset('images/favicon.ico') }}" />
