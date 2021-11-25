@@ -18,7 +18,7 @@
 <section class="section blog-wrap">
     <div class="container">
         <div class="row">
-            <div class="col-lg-8">
+            <div class="col-lg-12">
                 <div class="row">
                     <div class="col-lg-12 col-md-12 mb-5">
                         <div class="blog-item">
@@ -54,61 +54,6 @@
                         </div>
                     </div>
                     @endforeach
-                </div>
-            </div>
-            <div class="col-lg-4">
-                <div class="sidebar-wrap pl-lg-4 mt-5 mt-lg-0">
-                    @can('isDokter')
-                    <div class="sidebar-widget search  mb-3 ">
-                        <a href="{{ route('article.create') }}" class="btn btn-main-2 btn-round-full">Buat Artikel Baru<i class="icofont-simple-right ml-2  "></i></a>
-                    </div>
-                    @endcan
-
-                    <div class="sidebar-widget latest-post mb-3">
-                        <h5>Popular Posts</h5>
-
-                        <div class="py-2">
-                            <span class="text-sm text-muted">03 Mar 2018</span>
-                            <h6 class="my-2"><a href="#">Thoughtful living in los Angeles</a></h6>
-                        </div>
-
-                        <div class="py-2">
-                            <span class="text-sm text-muted">03 Mar 2018</span>
-                            <h6 class="my-2"><a href="#">Vivamus molestie gravida turpis.</a></h6>
-                        </div>
-
-                        <div class="py-2">
-                            <span class="text-sm text-muted">03 Mar 2018</span>
-                            <h6 class="my-2"><a href="#">Fusce lobortis lorem at ipsum semper sagittis</a></h6>
-                        </div>
-                    </div>
-
-                    <div class="sidebar-widget category mb-3">
-                        <h5 class="mb-4">Categories</h5>
-
-                        <ul class="list-unstyled">
-                            <li class="align-items-center">
-                                <a href="#">Medicine</a>
-                                <span>(14)</span>
-                            </li>
-                            <li class="align-items-center">
-                                <a href="#">Equipments</a>
-                                <span>(2)</span>
-                            </li>
-                            <li class="align-items-center">
-                                <a href="#">Heart</a>
-                                <span>(10)</span>
-                            </li>
-                            <li class="align-items-center">
-                                <a href="#">Free counselling</a>
-                                <span>(5)</span>
-                            </li>
-                            <li class="align-items-center">
-                                <a href="#">Lab test</a>
-                                <span>(5)</span>
-                            </li>
-                        </ul>
-                    </div>
                 </div>
             </div>
         </div>
