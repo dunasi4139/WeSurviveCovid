@@ -3,7 +3,10 @@
 namespace App\Http\Controllers;
 
 use App\Models\TempatVaksin;
+use App\Models\Province;
+
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class VaccineController extends Controller
 {
@@ -14,11 +17,22 @@ class VaccineController extends Controller
      */
     public function index()
     {
-        $data = TempatVaksin::orderBy('id')
-        ->paginate(1);
-        return view('pages.vaccine.index', compact('data'));
+        $data = TempatVaksin::orderByDesc('created_at')
+        ->paginate(5);
+
+        $provinsi = Province::all();
+        return view('pages.vaccine.index', compact('data' , 'provinsi'));
     }
 
+    public function filter($id)
+    {
+        $data = DB::table('provinces')
+        ->join('tempat_vaksin','tempat_vaksin.province_id','=','provinces.id')
+        ->get();
+
+        $provinsi = Province::all();
+        return view('pages.vaccine.index', compact('data' , 'provinsi'));
+    }
     /**
      * Show the form for creating a new resource.
      *

@@ -14,12 +14,13 @@
             <div class="card w-100 mb-3">
                 <div class="card-body" style="flex-direction: row">
                     <h5>Filter</h5>
-                    <select class="form-control">
-                        <option>Default select</option>
-                        <option>Default select</option>
-                        <option>Default select</option>
-                        <option>Default select</option>
-                    </select>
+						<form action="">
+							<select class="form-control" name="filter" id="filter" onchange="submit(filter)">
+							   @foreach ($provinsi as $p)
+							   <option value="{{ $p->id }}">{{ $p->name }}</option>
+							   @endforeach
+							</select>
+						 </form>
                 </div>
             </div>
         </div>
@@ -28,7 +29,7 @@
   </div>
 </section>
 
-
+@foreach($data as $d)
 <section class="section doctor-single">
 	<div class="container">
 		<div class="row mb-5">
@@ -37,7 +38,7 @@
 					<img src="images/team/1.jpg" alt="" class="img-fluid w-100">
 				</div>
 			</div>
-			@foreach($data as $d)
+
 			<div class="col-lg-8 col-md-6">
 				<div class="doctor-details mt-4 mt-lg-0">
 					<h2 class="text-md">{{ $d->nama }}</h2>
@@ -48,10 +49,18 @@
                     <p>Persyaratan : {{ $d->syarat }}</p>
 				</div>
 			</div>
-			@endforeach
-
-			{{-- {{ $data->links() }} --}}
 		</div>
 	</div>
 </section>
+@endforeach
+
 @endsection
+
+
+
+<script>
+function submit(id) {
+      document.getElementById(id).submit();
+   }
+
+</script>
