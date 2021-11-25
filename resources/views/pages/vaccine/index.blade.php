@@ -46,7 +46,6 @@
                     <p>Jadwal : {{ $d->jadwal }}</p>
                     <p>Jenis : {{ $d->jenis }}</p>
                     <p>Persyaratan : {{ $d->syarat }}</p>
-					<a href="appoinment.html" class="btn btn-main-2 btn-round-full mt-3">Daftar Vaksin<i class="icofont-simple-right ml-2  "></i></a>
 				</div>
 			</div>
 			@endforeach
