@@ -1,5 +1,7 @@
 @extends('layouts.app')
 
+@section('title', 'Profile')
+
 @section('content')
 <section class="page-title bg-1">
     <div class="overlay"></div>

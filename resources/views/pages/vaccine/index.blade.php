@@ -1,5 +1,7 @@
 @extends('layouts.app')
 
+@section('title', 'Vaksinasi')
+
 @section('content')
 
 <section class="page-title bg-1">

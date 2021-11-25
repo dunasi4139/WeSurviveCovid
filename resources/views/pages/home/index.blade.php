@@ -1,5 +1,7 @@
 @extends('layouts.app')
 
+@section('title', '')
+
 @section('content')
     <!-- Slider Start -->
     <section class="banner">
