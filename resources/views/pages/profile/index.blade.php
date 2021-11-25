@@ -53,6 +53,7 @@
         </div>
 
         <div class="row">
+            @if($contents->isEmpty())
             @foreach($contents as $content)
             <div class="col-lg-4 col-md-6 col-sm-6">
                 <div class="service-block mb-5">
@@ -69,6 +70,7 @@
                 </div>
             </div>
             @endforeach
+            @endif
         </div>
 
     </div>
