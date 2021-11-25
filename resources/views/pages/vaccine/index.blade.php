@@ -11,6 +11,17 @@
       <div class="col-md-12">
         <div class="block text-center">
           <h1 class="text-capitalize mb-5 text-lg">{{ trans('global.nav.vaccine') }}</h1>
+            <div class="card w-100 mb-3">
+                <div class="card-body" style="flex-direction: row">
+                    <h5>Filter</h5>
+                    <select class="form-control">
+                        <option>Default select</option>
+                        <option>Default select</option>
+                        <option>Default select</option>
+                        <option>Default select</option>
+                    </select>
+                </div>
+            </div>
         </div>
       </div>
     </div>
