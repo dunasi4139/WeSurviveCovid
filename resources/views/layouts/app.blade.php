@@ -26,29 +26,10 @@
 <body id="top">
 
     <header>
-        <div class="header-top-bar">
-            <div class="container">
-                <div class="row align-items-center">
-                    <div class="col-lg-6">
-                        <ul class="top-bar-info list-inline-item pl-0 mb-0">
-                            <li class="list-inline-item"><a href="mailto:support@gmail.com"><i class="icofont-support-faq mr-2"></i>support@WeSurviveCovid.com</a></li>
-                        </ul>
-                    </div>
-                    <div class="col-lg-6">
-                        <div class="text-lg-right top-right-bar mt-2 mt-lg-0">
-                            <a href="tel:+23-345-67890">
-                                <span>Butuh Bantuan : </span>
-                                <span class="h4">823-4565-13456</span>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
         <nav class="navbar navbar-expand-lg navigation" id="navbar">
             <div class="container">
                 <a class="navbar-brand" href="{{ route('homepage') }}">
-                    <img src="{{ asset('images/team/logo-pp.png') }}" alt="" class="img-fluid">
+                    <img src="{{ asset('images/team/logo-pp.png') }}" alt="" class="img-fluid" style="height: 7vh">
                 </a>
 
                 <button class="navbar-toggler collapsed" type="button" data-toggle="collapse" data-target="#navbarmain" aria-controls="navbarmain" aria-expanded="false" aria-label="Toggle navigation">
@@ -84,7 +65,7 @@
                             <a href="{{ route('vaccine.index') }}" class="nav-link">{{ trans('global.nav.vaccine') }}</a>
                         </li>
                         <li class="nav-item">
-                            <a class="dropdown-item" href="{{ route('logout') }}" onclick="event.preventDefault();
+                            <a class="dropdown-item m-2" href="{{ route('logout') }}" onclick="event.preventDefault();
                                       document.getElementById('logout-form').submit();">
                                 {{ trans('global.nav.logout') }}
                             </a>
