@@ -29,7 +29,7 @@
                             </div>
                             <span>24 Jam Siap Melayani</span>
                             <h4 class="mb-3">Bantuan Covid Dari Dokter</h4>
-                            <p class="mb-4">Get ALl time support for emergency.We have introduced the principle of family medicine.</p>
+                            <p class="mb-4">Dapatkan bantuan dari banyak dokter bersertifikat kami.</p>
                         </div>
 
                         <div class="feature-item mb-5 mb-lg-0">
@@ -51,7 +51,7 @@
                             </div>
                             <span>Sharing Sesama</span>
                             <h4 class="mb-3">Postingan Pengalaman Covid</h4>
-                            <p>Get ALl time support for emergency.We have introduced the principle of family medicine.Get Conneted with us for any urgency .</p>
+                            <p>Dapatkan berbagaimacam informasi bermanfaat untuk mempermudah kehidupan di masa pandemi.</p>
                         </div>
                     </div>
                 </div>
