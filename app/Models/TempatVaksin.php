@@ -19,4 +19,5 @@ class TempatVaksin extends Model
         'jenis',
         'province_id'
     ];
+
 }
