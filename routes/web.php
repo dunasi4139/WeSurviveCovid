@@ -75,6 +75,10 @@ Route::middleware('auth')->group(function () {
         Route::post('/form', [PostController::class, 'store'])->middleware(['can:isMasyarakat'])->name('store');
 
         Route::get('/{id}', [PostController::class, 'show'])->name('show');
+
+        Route::get('/form/{id}', [PostController::class, 'edit'])->middleware(['can:isMasyarakat'])->name('edit');
+
+        Route::post('/form/{id}', [PostController::class, 'update'])->middleware(['can:isMasyarakat'])->name('update');
     });
 
     Route::group(['prefix' => 'post','as' => 'comment.'], function () {

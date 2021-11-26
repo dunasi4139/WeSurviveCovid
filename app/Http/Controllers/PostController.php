@@ -57,13 +57,13 @@ class PostController extends Controller
         $id = Post::latest()->first();
 
         if ($request->hasFile('image')) {
-            $file = $request->file('image');     
-            $nama_file = Auth::id()."_".time()."_".$file->getClientOriginalName();        
+            $file = $request->file('image');
+            $nama_file = Auth::id() . "_" . time() . "_" . $file->getClientOriginalName();
             $tujuan_upload = 'images/posts/';
-            $file->move($tujuan_upload,$nama_file);
+            $file->move($tujuan_upload, $nama_file);
             $image = $request->file('image');
 
-            Post::where('id', '=', $id->id)->update(array('gambar' => $tujuan_upload.$nama_file));
+            Post::where('id', '=', $id->id)->update(array('gambar' => $tujuan_upload . $nama_file));
         }
 
         return redirect()->route('post.index');
@@ -80,7 +80,7 @@ class PostController extends Controller
         $user = User::find(Auth::id());
         $post = Post::find($id);
         $comments = Comment::where('post_id', $id)->orderBy('created_at')->get();
-        
+
         return view('pages.post.show', compact('post', 'user', 'comments'));
     }
 
@@ -92,7 +92,8 @@ class PostController extends Controller
      */
     public function edit($id)
     {
-        //
+        $post = Post::find($id);
+        return view('pages.post.edit', compact('post'));
     }
 
     /**
@@ -104,7 +105,19 @@ class PostController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $this->validate($request, [
+            'title' => ['required', 'string'],
+            'content' => ['required', 'string'],
+        ]);
+
+        $post = Post::find($id);
+        $post->judul = $request->input('title');
+        $post->isi = $request->input('content');
+        $post->save();
+
+        $user = User::find(Auth::id());
+
+        return view('pages.post.show', compact('post', 'user'));
     }
 
     /**

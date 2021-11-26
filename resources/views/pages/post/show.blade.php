@@ -39,6 +39,12 @@
                                 <p>{{ $post->isi }}</p>
 
                             </div>
+
+                            @can('isMasyarakat')
+                            @if($post->user_id == $user->id)
+                            <a href="{{ route('post.edit', $post->id) }}" class="btn btn-main-2 btn-round-full mt-3">Edit<i class="icofont-simple-right ml-2"></i></a>
+                            @endif
+                            @endcan
                         </div>
                     </div>
 

@@ -62,11 +62,19 @@
                         <h4 class="mt-4 mb-2 title-color">{{ $content->judul }}</h4>
                         <p class="mb-4 ellipsis text-break">{{ $content->isi }}</p>
                     </div>
+                    @if($user->role_id == 2)
                     <div class="d-flex">
-                        <a href="" target="_blank" class="p-2 px-3 btn btn-main btn-round-full">Lihat</a>
+                        <a href="{{ route('article.show', $content->id) }}" target="_blank" class="p-2 px-3 btn btn-main btn-round-full">Lihat</a>
                         <a href="" target="_blank" class="p-2 px-3 mx-2 btn btn-main btn-round-full">Edit</a>
                         <a href="" class="p-2 px-3 btn btn-main-2 btn-round-full">Hapus</a>
                     </div>
+                    @else
+                    <div class="d-flex">
+                        <a href="{{ route('post.show', $content->id) }}" target="_blank" class="p-2 px-3 btn btn-main btn-round-full">Lihat</a>
+                        <a href="" target="_blank" class="p-2 px-3 mx-2 btn btn-main btn-round-full">Edit</a>
+                        <a href="" class="p-2 px-3 btn btn-main-2 btn-round-full">Hapus</a>
+                    </div>
+                    @endif
                 </div>
             </div>
             @endforeach

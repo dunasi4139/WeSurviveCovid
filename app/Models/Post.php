@@ -23,4 +23,8 @@ class Post extends Model
     {
         return Comment::where('post_id', $id)->count();
     }
+
+    public function user(){
+        return $this->belongsTo(User::class, 'user_id');
+    }
 }
