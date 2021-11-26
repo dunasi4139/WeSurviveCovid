@@ -65,13 +65,13 @@
                     @if($user->role_id == 2)
                     <div class="d-flex">
                         <a href="{{ route('article.show', $content->id) }}" target="_blank" class="p-2 px-3 btn btn-main btn-round-full">Lihat</a>
-                        <a href="" target="_blank" class="p-2 px-3 mx-2 btn btn-main btn-round-full">Edit</a>
+                        <a href="{{ route('article.edit', $content->id) }}" target="_blank" class="p-2 px-3 mx-2 btn btn-main btn-round-full">Edit</a>
                         <a href="" class="p-2 px-3 btn btn-main-2 btn-round-full">Hapus</a>
                     </div>
                     @else
                     <div class="d-flex">
                         <a href="{{ route('post.show', $content->id) }}" target="_blank" class="p-2 px-3 btn btn-main btn-round-full">Lihat</a>
-                        <a href="" target="_blank" class="p-2 px-3 mx-2 btn btn-main btn-round-full">Edit</a>
+                        <a href="{{ route('post.edit', $content->id) }}" target="_blank" class="p-2 px-3 mx-2 btn btn-main btn-round-full">Edit</a>
                         <a href="" class="p-2 px-3 btn btn-main-2 btn-round-full">Hapus</a>
                     </div>
                     @endif
