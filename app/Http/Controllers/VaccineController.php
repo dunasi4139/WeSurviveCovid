@@ -15,24 +15,27 @@ class VaccineController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Request $request)
     {
-        $data = TempatVaksin::orderByDesc('created_at')
-        ->paginate(5);
+        $id = $request->filter;
+        if($id){
 
-        $provinsi = Province::all();
-        return view('pages.vaccine.index', compact('data' , 'provinsi'));
+            $data = DB::table('provinces')
+            ->join('tempat_vaksin', 'provinces.id', '=', 'tempat_vaksin.province_id')
+            ->where('tempat_vaksin.province_id', '=', $id)
+            ->paginate(5);
+
+            $provinsi = Province::all();
+            return view('pages.vaccine.index', compact('data' , 'provinsi'));
+        }else{
+            $data = TempatVaksin::orderByDesc('created_at')
+            ->paginate(5);
+    
+            $provinsi = Province::all();
+            return view('pages.vaccine.index', compact('data' , 'provinsi'));
+        }
     }
 
-    public function filter($id)
-    {
-        $data = DB::table('provinces')
-        ->join('tempat_vaksin','tempat_vaksin.province_id','=','provinces.id')
-        ->get();
-
-        $provinsi = Province::all();
-        return view('pages.vaccine.index', compact('data' , 'provinsi'));
-    }
     /**
      * Show the form for creating a new resource.
      *

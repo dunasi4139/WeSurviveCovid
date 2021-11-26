@@ -24,6 +24,7 @@ Route::get('/test', function(){
     return view('pages.profile.index');
 });
 
+
 // Route Auth untuk login, Register dan Logout
 Auth::routes();
 
@@ -59,6 +60,6 @@ Route::middleware('auth')->group(function () {
 
     Route::group(['prefix' => 'vaksinasi','as' => 'vaccine.'], function () {
         Route::get('', [VaccineController::class, 'index'])->name('index');
-        Route::get('filter{id}', [VaccineController::class, 'filter'])->name('filter');
+        // Route::get('filter{id}', [VaccineController::class, 'filter'])->name('filter');
     });
 });

@@ -15,4 +15,7 @@ class Province extends Model
         'id',
         'name',
     ];
+    public function tempat_vaksin(){
+        return $this->hasMany(TempatVaksin::class,'province_id');
+    }
 }
