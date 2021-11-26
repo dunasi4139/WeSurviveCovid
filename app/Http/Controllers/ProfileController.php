@@ -22,7 +22,7 @@ class ProfileController extends Controller
         if($user->role_id == 2) {
             $contents = Article::where('dokter_id', Auth::id())->orderByDesc('created_at')->paginate(6);
         } else {
-            //$contents = Post::where('user_id', Auth::id())->orderByDesc('created_at')->paginate(6);
+            $contents = Post::where('user_id', Auth::id())->orderByDesc('created_at')->paginate(6);
         }
 
         return view('pages.profile.index', compact('user', 'contents'));

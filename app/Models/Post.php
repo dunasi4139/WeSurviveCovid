@@ -9,12 +9,18 @@ class Post extends Model
 {
     use HasFactory;
 
-    public $table = 'comments';
+    public $table = 'posts';
 
     protected $fillable = [
         'user_id',
         'judul',
         'gambar',
         'isi',
+        'like',
     ];
+
+    public static function count($id)
+    {
+        return Comment::where('post_id', $id)->count();
+    }
 }

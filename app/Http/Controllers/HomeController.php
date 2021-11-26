@@ -25,4 +25,9 @@ class HomeController extends Controller
     {
         return view('pages.home.index');
     }
+
+    public function move()
+    {
+        return redirect()->route('homepage');
+    }
 }

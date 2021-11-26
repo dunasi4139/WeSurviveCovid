@@ -6,6 +6,8 @@ use App\Http\Controllers\ArticleController;
 use App\Http\Controllers\SuggestionController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\VaccineController;
+use App\Http\Controllers\PostController;
+use App\Http\Controllers\CommentController;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Auth;
 
@@ -21,7 +23,7 @@ use Illuminate\Support\Facades\Auth;
 */
 
 Route::get('/test', function(){
-    return view('pages.post.index');
+    return view('test');
 });
 
 
@@ -33,7 +35,8 @@ Route::get('/register-dokter', [RegisterController::class, 'dokterIndex'])->name
 
 //Menu
 Route::middleware('auth')->group(function () {   
-    Route::get('/', [HomeController::class, 'index'])->name('homepage');
+    Route::get('/', [HomeController::class, 'move']);
+    Route::get('beranda', [HomeController::class, 'index'])->name('homepage');
 
     Route::group(['prefix' => 'profil','as' => 'profile.'], function () {  
         Route::get('', [ProfileController::class, 'index'])->name('index');
@@ -66,5 +69,15 @@ Route::middleware('auth')->group(function () {
 
     Route::group(['prefix' => 'post','as' => 'post.'], function () {
         Route::get('', [PostController::class, 'index'])->name('index');
+
+        Route::get('/form', [PostController::class, 'create'])->middleware(['can:isMasyarakat'])->name('create');
+
+        Route::post('/form', [PostController::class, 'store'])->middleware(['can:isMasyarakat'])->name('store');
+
+        Route::get('/{id}', [PostController::class, 'show'])->name('show');
+    });
+
+    Route::group(['prefix' => 'post','as' => 'comment.'], function () {
+        Route::post('/{id}/komentar', [CommentController::class, 'store'])->name('store');
     });
 });

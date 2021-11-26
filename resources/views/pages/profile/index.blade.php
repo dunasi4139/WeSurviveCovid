@@ -32,7 +32,7 @@
                     <div class="divider my-4"></div>
                     <p>Email: {{ $user->email }}</p>
 
-                    @if($user->noDokter->no_dokter != null)
+                    @if($user->role_id == 2)
                     <p>No. Izin Praktek: {{ $user->noDokter->no_dokter }}</p>
                     @endif
                 </div>
