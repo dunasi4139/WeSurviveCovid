@@ -3,6 +3,10 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
+use App\Models\Post;
+use App\Models\Comment;
+use App\Models\User;
 
 class PostController extends Controller
 {
@@ -13,6 +17,8 @@ class PostController extends Controller
      */
     public function index()
     {
+        $posts = Post::orderByDesc('created_at')->paginate(6);
+
         return view('pages.post.index');
     }
 
@@ -23,7 +29,7 @@ class PostController extends Controller
      */
     public function create()
     {
-        //
+        return view('pages.post.create');
     }
 
     /**
@@ -34,7 +40,32 @@ class PostController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $request->validate([
+            'title' => ['required', 'string'],
+            'content' => ['required', 'string'],
+            'image' => 'image|mimes:jpg,jpeg,png'
+        ]);
+
+        Article::create([
+            'user_id' => Auth::id(),
+            'judul' => $request->title,
+            'isi' => $request->content,
+            'gambar' => "/images/blog/default.jpg"
+        ]);
+
+        $id = Article::latest()->first();
+
+        if ($request->hasFile('image')) {
+            $file = $request->file('image');     
+            $nama_file = Auth::id()."_".time()."_".$file->getClientOriginalName();        
+            $tujuan_upload = 'images/posts/';
+            $file->move($tujuan_upload,$nama_file);
+            $image = $request->file('image');
+
+            Post::where('id', '=', $id->id)->update(array('gambar' => $tujuan_upload.$nama_file));
+        }
+
+        return redirect()->route('post.index');
     }
 
     /**
@@ -45,7 +76,10 @@ class PostController extends Controller
      */
     public function show($id)
     {
-        //
+        $user = User::find(Auth::id());
+        $post = Post::find($id);
+        
+        return view('pages.article.show', compact('post', 'user'));
     }
 
     /**

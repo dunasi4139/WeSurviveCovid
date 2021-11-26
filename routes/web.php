@@ -21,7 +21,7 @@ use Illuminate\Support\Facades\Auth;
 */
 
 Route::get('/test', function(){
-    return view('pages.profile.index');
+    return view('pages.post.index');
 });
 
 
@@ -61,5 +61,9 @@ Route::middleware('auth')->group(function () {
     Route::group(['prefix' => 'vaksinasi','as' => 'vaccine.'], function () {
         Route::get('', [VaccineController::class, 'index'])->name('index');
         // Route::get('filter{id}', [VaccineController::class, 'filter'])->name('filter');
+    });
+
+    Route::group(['prefix' => 'post','as' => 'post.'], function () {
+        Route::get('', [PostController::class, 'index'])->name('index');
     });
 });

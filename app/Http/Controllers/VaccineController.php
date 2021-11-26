@@ -4,7 +4,6 @@ namespace App\Http\Controllers;
 
 use App\Models\TempatVaksin;
 use App\Models\Province;
-
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 
@@ -34,6 +33,7 @@ class VaccineController extends Controller
             $provinsi = Province::all();
             return view('pages.vaccine.index', compact('data' , 'provinsi'));
         }
+
     }
 
     /**

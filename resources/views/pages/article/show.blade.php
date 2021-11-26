@@ -23,7 +23,7 @@
         <div class="row">
             <div class="col-lg-12">
                 <div class="department-img">
-                    <img src="images/service/bg-1.jpg" alt="" class="img-fluid">
+                    <img src="{{ $article->gambar }}" alt="" class="img-fluid">
                 </div>
             </div>
         </div>
@@ -33,7 +33,7 @@
                 <div class="department-content mt-5">
                     <h3 class="text-md">{{ $article->judul }}</h3>
                     <div class="divider my-4"></div>
-                    <p class="">{{ $article->isi }}</p>
+                    <p class="text-break">{{ $article->isi }}</p>
 
                     @can('isDokter')
                     @if($article->user->noDokter->no_dokter == $user->noDokter->no_dokter)
