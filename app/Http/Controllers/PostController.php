@@ -19,7 +19,7 @@ class PostController extends Controller
     {
         $posts = Post::orderByDesc('created_at')->paginate(6);
 
-        return view('pages.post.index');
+        return view('pages.post.index', compact('posts'));
     }
 
     /**
@@ -46,14 +46,15 @@ class PostController extends Controller
             'image' => 'image|mimes:jpg,jpeg,png'
         ]);
 
-        Article::create([
+        Post::create([
             'user_id' => Auth::id(),
             'judul' => $request->title,
             'isi' => $request->content,
-            'gambar' => "/images/blog/default.jpg"
+            'gambar' => "/images/blog/default.jpg",
+            'like' => 0
         ]);
 
-        $id = Article::latest()->first();
+        $id = Post::latest()->first();
 
         if ($request->hasFile('image')) {
             $file = $request->file('image');     
@@ -79,7 +80,7 @@ class PostController extends Controller
         $user = User::find(Auth::id());
         $post = Post::find($id);
         
-        return view('pages.article.show', compact('post', 'user'));
+        return view('pages.post.show', compact('post', 'user'));
     }
 
     /**

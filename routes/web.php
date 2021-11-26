@@ -6,6 +6,7 @@ use App\Http\Controllers\ArticleController;
 use App\Http\Controllers\SuggestionController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\VaccineController;
+use App\Http\Controllers\PostController;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Auth;
 
@@ -21,7 +22,7 @@ use Illuminate\Support\Facades\Auth;
 */
 
 Route::get('/test', function(){
-    return view('pages.post.index');
+    return view('test');
 });
 
 // Route Auth untuk login, Register dan Logout
@@ -64,5 +65,11 @@ Route::middleware('auth')->group(function () {
 
     Route::group(['prefix' => 'post','as' => 'post.'], function () {
         Route::get('', [PostController::class, 'index'])->name('index');
+
+        Route::get('/form', [PostController::class, 'create'])->middleware(['can:isMasyarakat'])->name('create');
+
+        Route::post('/form', [PostController::class, 'store'])->middleware(['can:isMasyarakat'])->name('store');
+
+        Route::get('/{id}', [PostController::class, 'show'])->name('show');
     });
 });
