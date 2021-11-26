@@ -79,8 +79,9 @@ class PostController extends Controller
     {
         $user = User::find(Auth::id());
         $post = Post::find($id);
+        $comments = Comment::where('post_id', $id)->orderBy('created_at')->get();
         
-        return view('pages.post.show', compact('post', 'user'));
+        return view('pages.post.show', compact('post', 'user', 'comments'));
     }
 
     /**

@@ -7,6 +7,7 @@ use App\Http\Controllers\SuggestionController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\VaccineController;
 use App\Http\Controllers\PostController;
+use App\Http\Controllers\CommentController;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Auth;
 
@@ -72,5 +73,9 @@ Route::middleware('auth')->group(function () {
         Route::post('/form', [PostController::class, 'store'])->middleware(['can:isMasyarakat'])->name('store');
 
         Route::get('/{id}', [PostController::class, 'show'])->name('show');
+    });
+
+    Route::group(['prefix' => 'post','as' => 'comment.'], function () {
+        Route::post('/{id}/komentar', [CommentController::class, 'store'])->name('store');
     });
 });

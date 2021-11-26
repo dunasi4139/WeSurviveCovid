@@ -49,24 +49,24 @@
                             @if($post->count($post->id) != 0)
                             <ul class="comment-tree list-unstyled">
 
-                            @foreach($post->comment as $comment)
+                                @foreach($comments as $comment)
                                 <li class="mb-5">
                                     <div class="comment-area-box">
                                         <div class="comment-thumb float-left">
-                                            <img alt="" src="images/blog/testimonial1.jpg" class="img-fluid">
+                                            <img alt="" src="{{ asset('images/blog/testimonial1.jpg') }}" class="img-fluid">
                                         </div>
 
                                         <div class="comment-info">
-                                            <h5 class="mb-1">$comment->user->name</h5>
-                                            <span class="date-comm"> Dipost pada $comment->created_at</span>
+                                            <h5 class="mb-1">{{ $comment->user->name }}</h5>
+                                            <span class="date-comm"> Dipost pada {{ $comment->created_at }}</span>
                                         </div>
 
                                         <div class="comment-content mt-3">
-                                            <p>$comment->isi</p>
+                                            <p>{{ $comment->isi }}</p>
                                         </div>
                                     </div>
                                 </li>
-                            @endforeach
+                                @endforeach
 
                             </ul>
                             @endif
@@ -75,12 +75,13 @@
 
 
                     <div class="col-lg-12">
-                        <form class="comment-form my-5" id="comment-form">
+                        <form class="comment-form my-5" id="comment-form" method="POST" action="{{ route('comment.store', [$post->id]) }}" enctype="multipart/form-data">
+                            @csrf
                             <h4 class="mb-4">Tulis komentar</h4>
 
-                            <textarea class="form-control mb-4" name="comment" id="comment" cols="30" rows="5" placeholder=""></textarea>
+                            <textarea type="text" class="form-control mb-4" name="comment" id="comment" cols="30" rows="5" required></textarea>
 
-                            <input class="btn btn-main-2 btn-round-full" type="submit" name="submit-contact" id="submit_contact" value="Kirim">
+                            <button class="btn btn-main-2 btn-round-full" type="submit">Kirim</button>
                         </form>
                     </div>
                 </div>
