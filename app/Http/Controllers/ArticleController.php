@@ -90,7 +90,6 @@ class ArticleController extends Controller
     public function edit($id)
     {
         $article = Article::find($id);
-        
         return view('pages.article.edit', compact('article'));
     }
 
@@ -103,7 +102,19 @@ class ArticleController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $this->validate($request, [
+            'title' => ['required', 'string'],
+            'content' => ['required', 'string'],
+        ]);
+        
+        $article = Article::find($id);
+        $article->judul = $request->input('title');
+        $article->isi = $request->input('content');
+        $article->save();
+        
+        $user = User::find(Auth::id());
+        
+        return view('pages.article.show', compact('article', 'user'));
     }
 
     /**

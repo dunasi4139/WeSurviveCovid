@@ -15,8 +15,8 @@
             <div class="card-body" style="flex-direction: row">
               <h5>Filter</h5>
               <select class="form-control">
-                @foreach ($provinces as $province)
-                <option value="{{ $province->id }}">{{ $province->name }}</option>
+                @foreach ($province as $p)
+                <option value="{{ $p->id }}">{{ $p->name }}</option>
                 @endforeach
               </select>
             </div>

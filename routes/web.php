@@ -48,7 +48,9 @@ Route::middleware('auth')->group(function () {
 
         Route::get('/{id}', [ArticleController::class, 'show'])->name('show');   
         
-        Route::put('/form/{id}', [ArticleController::class, 'edit'])->middleware(['can:isDokter'])->name('edit');   
+        Route::get('/form/{id}', [ArticleController::class, 'edit'])->middleware(['can:isDokter'])->name('edit');
+        
+        Route::post('/form/{id}', [ArticleController::class, 'update'])->middleware(['can:isDokter'])->name('update');
     });
     
 
@@ -60,7 +62,6 @@ Route::middleware('auth')->group(function () {
 
     Route::group(['prefix' => 'vaksinasi','as' => 'vaccine.'], function () {
         Route::get('', [VaccineController::class, 'index'])->name('index');
-        // Route::get('filter{id}', [VaccineController::class, 'filter'])->name('filter');
     });
 
     Route::group(['prefix' => 'post','as' => 'post.'], function () {
