@@ -24,108 +24,109 @@
 </head>
 
 <body id="top">
+    <div class="content">
+        <header>
+            <nav class="navbar navbar-expand-lg navigation" id="navbar">
+                <div class="container">
+                    <a class="navbar-brand" href="{{ route('homepage') }}">
+                        <img src="{{ asset('images/team/logo_fix.png') }}" alt="" class="img" style="height: 8vh">
+                    </a>
 
-    <header>
-        <nav class="navbar navbar-expand-lg navigation" id="navbar">
-            <div class="container">
-                <a class="navbar-brand" href="{{ route('homepage') }}">
-                    <img src="{{ asset('images/team/logo_fix.png') }}" alt="" class="img" style="height: 8vh">
-                </a>
-
-                <button class="navbar-toggler collapsed" type="button" data-toggle="collapse" data-target="#navbarmain" aria-controls="navbarmain" aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="icofont-navigation-menu"></span>
-                </button>
+                    <button class="navbar-toggler collapsed" type="button" data-toggle="collapse" data-target="#navbarmain" aria-controls="navbarmain" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="icofont-navigation-menu"></span>
+                    </button>
 
 
-                <div class="collapse navbar-collapse" id="navbarmain">
-                    <ul class="navbar-nav ml-auto">
-                        @guest
-                        <li class="nav-item active">
-                            <a style="cursor: pointer" class="nav-link" href="{{ route('register') }}">{{ trans('global.register') }}</a>
-                        </li>
-                        <li class="nav-item">
-                            <a style="cursor: pointer" href="{{ route('login') }}" class="nav-link">{{ trans('global.login') }}</a>
-                        </li>
-                        @endguest
+                    <div class="collapse navbar-collapse" id="navbarmain">
+                        <ul class="navbar-nav ml-auto">
+                            @guest
+                            <li class="nav-item active">
+                                <a style="cursor: pointer" class="nav-link" href="{{ route('register') }}">{{ trans('global.register') }}</a>
+                            </li>
+                            <li class="nav-item">
+                                <a style="cursor: pointer" href="{{ route('login') }}" class="nav-link">{{ trans('global.login') }}</a>
+                            </li>
+                            @endguest
 
-                        @auth
-                        <li class="nav-item active">
-                            <a style="cursor: pointer" href="{{ route('homepage') }}" class="nav-link">{{ trans('global.nav.home') }}</a>
-                        </li>
+                            @auth
+                            <li class="nav-item active">
+                                <a style="cursor: pointer" href="{{ route('homepage') }}" class="nav-link">{{ trans('global.nav.home') }}</a>
+                            </li>
 
-                        @can('isMasyarakat')
-                        <li class="nav-item dropdown">
-                            <a style="cursor: pointer" class="nav-link">{{ trans('global.nav.post') }}</a>
-                            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                <li><a class="dropdown-item" href="{{ route('post.index') }}">Lihat</a></li>
-                                <li><a class="dropdown-item" href="{{ route('post.create') }}">Buat Postingan Baru</a></li>
-                            </ul>
-                        </li>
-                        @endcan
+                            @can('isMasyarakat')
+                            <li class="nav-item dropdown">
+                                <a style="cursor: pointer" class="nav-link">{{ trans('global.nav.post') }}</a>
+                                <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                    <li><a class="dropdown-item" href="{{ route('post.index') }}">Lihat</a></li>
+                                    <li><a class="dropdown-item" href="{{ route('post.create') }}">Buat Postingan Baru</a></li>
+                                </ul>
+                            </li>
+                            @endcan
 
-                        @can('isDokter')
-                        <li class="nav-item active">
-                            <a style="cursor: pointer" href="{{ route('post.index') }}" class="nav-link">{{ trans('global.nav.post') }}</a>
-                        </li>
-                        @endcan
+                            @can('isDokter')
+                            <li class="nav-item active">
+                                <a style="cursor: pointer" href="{{ route('post.index') }}" class="nav-link">{{ trans('global.nav.post') }}</a>
+                            </li>
+                            @endcan
 
-                        @can('isDokter')
-                        <li class="nav-item dropdown">
-                            <a style="cursor: pointer" class="nav-link">{{ trans('global.nav.article') }}</a>
-                            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                <li><a class="dropdown-item" href="{{ route('article.index') }}">Lihat</a></li>
-                                <li><a class="dropdown-item" href="{{ route('article.create') }}">Buat Artikel Baru</a></li>
-                            </ul>
-                        </li>
-                        @endcan
+                            @can('isDokter')
+                            <li class="nav-item dropdown">
+                                <a style="cursor: pointer" class="nav-link">{{ trans('global.nav.article') }}</a>
+                                <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                    <li><a class="dropdown-item" href="{{ route('article.index') }}">Lihat</a></li>
+                                    <li><a class="dropdown-item" href="{{ route('article.create') }}">Buat Artikel Baru</a></li>
+                                </ul>
+                            </li>
+                            @endcan
 
-                        @can('isMasyarakat')
-                        <li class="nav-item active">
-                            <a style="cursor: pointer" href="{{ route('article.index') }}" class="nav-link">{{ trans('global.nav.article') }}</a>
-                        </li>
-                        @endcan
+                            @can('isMasyarakat')
+                            <li class="nav-item active">
+                                <a style="cursor: pointer" href="{{ route('article.index') }}" class="nav-link">{{ trans('global.nav.article') }}</a>
+                            </li>
+                            @endcan
 
-                        <li class="nav-item">
-                            <a style="cursor: pointer" href="{{ route('suggestion.index') }}" class="nav-link">{{ trans('global.nav.suggestion') }}</a>
-                        </li>
-                        <li class="nav-item">
-                            <a style="cursor: pointer" href="{{ route('vaccine.index') }}" class="nav-link">{{ trans('global.nav.vaccine') }}</a>
-                        </li>
-                        <li class="nav-item dropdown">
-                            <a style="cursor: pointer" class="nav-link">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" class="bi bi-person-fill" viewBox="0 0 16 16">
-                                    <path d="M3 14s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1H3zm5-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6z" />
-                                </svg>
-                            </a>
-                            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                <li><a class="dropdown-item" href="{{ route('profile.index') }}">Profile</a></li>
-                                <li>
-                                    <a style="cursor: pointer" class="dropdown-item" href="{{ route('logout') }}" onclick="event.preventDefault();
+                            <li class="nav-item">
+                                <a style="cursor: pointer" href="{{ route('suggestion.index') }}" class="nav-link">{{ trans('global.nav.suggestion') }}</a>
+                            </li>
+                            <li class="nav-item">
+                                <a style="cursor: pointer" href="{{ route('vaccine.index') }}" class="nav-link">{{ trans('global.nav.vaccine') }}</a>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a style="cursor: pointer" class="nav-link">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" class="bi bi-person-fill" viewBox="0 0 16 16">
+                                        <path d="M3 14s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1H3zm5-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6z" />
+                                    </svg>
+                                </a>
+                                <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                    <li><a class="dropdown-item" href="{{ route('profile.index') }}">Profile</a></li>
+                                    <li>
+                                        <a style="cursor: pointer" class="dropdown-item" href="{{ route('logout') }}" onclick="event.preventDefault();
                                       document.getElementById('logout-form').submit();">
-                                        {{ trans('global.nav.logout') }}
-                                    </a>
-                                    <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
-                                        @csrf
-                                    </form>
-                                </li>
+                                            {{ trans('global.nav.logout') }}
+                                        </a>
+                                        <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+                                            @csrf
+                                        </form>
+                                    </li>
 
-                            </ul>
-                        </li>
-                        @endauth
-                    </ul>
+                                </ul>
+                            </li>
+                            @endauth
+                        </ul>
+                    </div>
                 </div>
-            </div>
-        </nav>
-    </header>
+            </nav>
+        </header>
 
 
 
 
-    <div>
-        @yield('content')
+        <div>
+            @yield('content')
+        </div>
     </div>
 
-    <footer class="footer section gray-bg pt-0">
+    <footer class="footer section gray-bg p-0">
         <div class="container">
 
             <div class="footer-btm py-4">

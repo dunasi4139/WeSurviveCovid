@@ -1499,3 +1499,11 @@ a:focus {
   -webkit-box-orient: vertical;
   overflow: hidden;
 }
+
+.content {
+  min-height: calc(100vh - 74.594px);
+}
+
+footer {
+  height: 74.594px;
+}

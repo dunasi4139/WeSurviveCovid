@@ -23,14 +23,14 @@ class UserSeeder extends Seeder
                 'role_id' => 1, // Masyarakat
             ],
             [
-                'name' => 'Dokter',
-                'email' => 'dokter@gmail.com',
+                'name' => 'Edward Jenner',
+                'email' => 'dokter@dummy.com',
                 'password' => Hash::make('dokter123'),
                 'role_id' => 2, // Dokter
             ],
             [
                 'name' => 'Admin',
-                'email' => 'admin@gmail.com',
+                'email' => 'admin@dummy.com',
                 'password' => Hash::make('password123'),
                 'role_id' => 0, // Admin
             ],
