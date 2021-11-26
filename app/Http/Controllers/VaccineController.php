@@ -26,6 +26,7 @@ class VaccineController extends Controller
 
             $provinsi = Province::all();
             return view('pages.vaccine.index', compact('data' , 'provinsi'));
+            
         }else{
             $data = TempatVaksin::orderByDesc('created_at')
             ->paginate(5);
