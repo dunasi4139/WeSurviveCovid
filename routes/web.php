@@ -21,7 +21,7 @@ use Illuminate\Support\Facades\Auth;
 */
 
 Route::get('/test', function(){
-    return view('pages.profile.index');
+    return view('pages.post.index');
 });
 
 // Route Auth untuk login, Register dan Logout
@@ -59,5 +59,9 @@ Route::middleware('auth')->group(function () {
 
     Route::group(['prefix' => 'vaksinasi','as' => 'vaccine.'], function () {
         Route::get('', [VaccineController::class, 'index'])->name('index');
+    });
+
+    Route::group(['prefix' => 'post','as' => 'post.'], function () {
+        Route::get('', [PostController::class, 'index'])->name('index');
     });
 });
