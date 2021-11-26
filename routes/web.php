@@ -35,6 +35,7 @@ Route::get('/register-dokter', [RegisterController::class, 'dokterIndex'])->name
 
 //Menu
 Route::middleware('auth')->group(function () {   
+    Route::get('/', [HomeController::class, 'move']);
     Route::get('beranda', [HomeController::class, 'index'])->name('homepage');
 
     Route::group(['prefix' => 'profil','as' => 'profile.'], function () {  
