@@ -17,5 +17,6 @@ class TempatVaksin extends Model
         'syarat',
         'alamat',
         'jenis',
+        'province_id'
     ];
 }
