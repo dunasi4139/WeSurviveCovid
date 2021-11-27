@@ -19,7 +19,7 @@ class CreateDokterTable extends Migration
             $table->string('no_dokter');
             $table->timestamps();
 
-            $table->foreign('user_id')->references('id')->on('users');
+            $table->foreign('user_id')->references('id')->on('users')->onUpdate('cascade')->onDelete('cascade');
         });
     }
 

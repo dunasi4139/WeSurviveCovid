@@ -27,7 +27,7 @@
                 <div class="row">
                     <div class="col-lg-12 mb-5">
                         <div class="single-blog-item">
-                            <img src="{{ $post->gambar }}" alt="" class="img-fluid">
+                            <img src="{{ $post->gambar }}" alt="" class="image">
 
                             <div class="blog-item-content mt-5">
                                 <div class="blog-item-meta mb-3">
@@ -57,18 +57,20 @@
 
                                 @foreach($comments as $comment)
                                 <li class="mb-5">
-                                    <div class="comment-area-box">
-                                        <div class="comment-thumb float-left">
-                                            <img alt="" src="{{ asset('images/blog/testimonial1.jpg') }}" class="img-fluid">
+                                    <div class="comment-area-box d-flex">
+                                        <div class="comment-user mr-3">
+                                            <img alt="" src="{{ asset('images/blog/testimonial1.jpg') }}" style="height: 52px; width: auto;" class="image">
                                         </div>
 
-                                        <div class="comment-info">
-                                            <h5 class="mb-1">{{ $comment->user->name }}</h5>
-                                            <span class="date-comm"> Dipost pada {{ $comment->created_at }}</span>
-                                        </div>
+                                        <div>
+                                            <div class="comment-info">
+                                                <h5 class="mb-1">{{ $comment->user->name }}</h5>
+                                                <span class="date-comm"> Dipost pada {{ $comment->created_at }}</span>
+                                            </div>
 
-                                        <div class="comment-content mt-3">
-                                            <p>{{ $comment->isi }}</p>
+                                            <div class="comment-content mt-3">
+                                                <p>{{ $comment->isi }}</p>
+                                            </div>
                                         </div>
                                     </div>
                                 </li>
