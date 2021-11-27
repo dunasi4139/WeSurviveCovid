@@ -64,7 +64,13 @@
 
                                         <div>
                                             <div class="comment-info">
-                                                <h5 class="mb-1">{{ $comment->user->name }}</h5>
+                                                <div class="d-flex">
+                                                    <h5 class="mr-2">{{ $comment->user->name }}</h5>
+                                                    @if($comment->user->role_id == 2)
+                                                    <img src="{{ asset('images/verified.png') }}" style="height: 18px; width:auto;" alt="">
+                                                    @endif
+                                                </div>
+
                                                 <span class="date-comm"> Dipost pada {{ $comment->created_at }}</span>
                                             </div>
 
