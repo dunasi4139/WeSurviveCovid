@@ -57,7 +57,7 @@
                                     <span class="text-black text-capitalize mr-3"><i class="icofont-calendar mr-1"></i>{{ $post->created_at->isoFormat('dddd, D MMMM Y H:i') }}</span>
                                 </div>
 
-                                <h2 class="mt-3 mb-3"><a href="blog-single.html">{{ $post->judul }}</a></h2>
+                                <h2 class="mt-3 mb-3">{{ $post->judul }}</h2>
 
                                 <p class="mb-4">{{ $post->isi }}</p>
 
