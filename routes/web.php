@@ -54,6 +54,8 @@ Route::middleware('auth')->group(function () {
         Route::get('/form/{id}', [ArticleController::class, 'edit'])->middleware(['can:isDokter'])->name('edit');
         
         Route::post('/form/{id}', [ArticleController::class, 'update'])->middleware(['can:isDokter'])->name('update');
+
+        Route::post('/hapus/{id}', [ArticleController::class, 'destroy'])->middleware(['can:isDokter'])->name('delete');
     });
     
 
@@ -79,6 +81,8 @@ Route::middleware('auth')->group(function () {
         Route::get('/form/{id}', [PostController::class, 'edit'])->middleware(['can:isMasyarakat'])->name('edit');
 
         Route::post('/form/{id}', [PostController::class, 'update'])->middleware(['can:isMasyarakat'])->name('update');
+
+        Route::post('/hapus/{id}', [PostController::class, 'destroy'])->middleware(['can:isMasyarakat'])->name('delete');
     });
 
     Route::group(['prefix' => 'post','as' => 'comment.'], function () {

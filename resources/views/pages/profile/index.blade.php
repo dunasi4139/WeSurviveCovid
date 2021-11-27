@@ -66,13 +66,19 @@
                     <div class="d-flex">
                         <a href="{{ route('article.show', $content->id) }}" target="_blank" class="p-2 px-3 btn btn-main btn-round-full">Lihat</a>
                         <a href="{{ route('article.edit', $content->id) }}" target="_blank" class="p-2 px-3 mx-2 btn btn-main btn-round-full">Edit</a>
-                        <a href="" class="p-2 px-3 btn btn-main-2 btn-round-full">Hapus</a>
+                        <form method="POST" action="{{ route('article.delete', $content->id) }}" onsubmit="return confirm('Anda yakin?');">
+                            @csrf
+                            <button type="submit" class="p-2 px-3 btn btn-main-2 btn-round-full">Hapus</button>
+                        </form>
                     </div>
                     @else
                     <div class="d-flex">
                         <a href="{{ route('post.show', $content->id) }}" target="_blank" class="p-2 px-3 btn btn-main btn-round-full">Lihat</a>
                         <a href="{{ route('post.edit', $content->id) }}" target="_blank" class="p-2 px-3 mx-2 btn btn-main btn-round-full">Edit</a>
-                        <a href="" class="p-2 px-3 btn btn-main-2 btn-round-full">Hapus</a>
+                        <form method="POST" action="{{ route('post.delete', $content->id) }}" onsubmit="return confirm('Anda yakin?');">
+                            @csrf
+                            <button type="submit" class="p-2 px-3 btn btn-main-2 btn-round-full">Hapus</button>
+                        </form>
                     </div>
                     @endif
                 </div>

@@ -125,6 +125,8 @@ class ArticleController extends Controller
      */
     public function destroy($id)
     {
-        //
+        Article::where('id', $id)->forceDelete();
+
+        return back();
     }
 }

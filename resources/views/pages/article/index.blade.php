@@ -27,7 +27,7 @@
                     <div class="col-lg-12 col-md-12 mb-5">
                         <div class="blog-item">
                             <div class="blog-thumb">
-                                <img src="{{ $article->gambar }}" alt="" class="img-fluid ">
+                                <img src="{{ $article->gambar }}" alt="" class="image">
                             </div>
                             <div class="blog-item-content">
                                 <div class="blog-item-meta mb-3 mt-4">

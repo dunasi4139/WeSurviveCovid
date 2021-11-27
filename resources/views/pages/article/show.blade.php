@@ -23,7 +23,7 @@
         <div class="row">
             <div class="col-lg-12">
                 <div class="department-img">
-                    <img src="{{ $article->gambar }}" alt="" class="img-fluid">
+                    <img src="{{ $article->gambar }}" alt="" class="image">
                 </div>
             </div>
         </div>
