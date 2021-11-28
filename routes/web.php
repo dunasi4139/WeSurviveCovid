@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\AdminController;
 use App\Http\Controllers\Auth\RegisterController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\ArticleController;
@@ -23,7 +24,7 @@ use Illuminate\Support\Facades\Auth;
 */
 
 Route::get('/test', function(){
-    return view('test');
+    return view('pages.admin.index');
 });
 
 
@@ -87,5 +88,9 @@ Route::middleware('auth')->group(function () {
 
     Route::group(['prefix' => 'post','as' => 'comment.'], function () {
         Route::post('/{id}/komentar', [CommentController::class, 'store'])->name('store');
+    });
+
+    Route::group(['prefix' => 'admin','as' => 'admin.'], function () {
+        Route::get('/', [AdminController::class, 'index'])->middleware(['can:isAdmin'])->name('index');
     });
 });
