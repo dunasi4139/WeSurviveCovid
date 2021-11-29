@@ -27,7 +27,7 @@
 
                     <div class="mb-3">
                         <label class="form-label">{{ trans('global.title') }}</label>
-                        <input type="text" value="{{$post->judul}}"  class="form-control @error('title') is-invalid @enderror" name="title" value="{{ old('title') }}" required autocomplete="title" autofocus>
+                        <input type="text" value="{{$post->judul}}"  class="form-control @error('title') is-invalid @enderror" name="title" required autocomplete="title" autofocus>
                         @error('title')
                         <span class="invalid-feedback" role="alert">
                             <strong>{{ $message }}</strong>

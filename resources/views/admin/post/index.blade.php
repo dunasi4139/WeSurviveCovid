@@ -28,21 +28,27 @@
                                 <tr>
                                     <th>No.</th>
                                     <th>ID</th>
-                                    <th>dokter_id</th>
+                                    <th>masyarakat_id</th>
                                     <th>Judul</th>
                                     <th>Gambar</th>
                                     <th>Isi</th>
+                                    <th>Like</th>
                                     <th></th>
                                 </tr>
                             </thead>
                             <tbody>
+                                @php
+                                $n = 1
+                                @endphp
+                                @foreach($posts as $post)
                                 <tr>
-                                    <td></td>
+                                    <td>{{ $n }}</td>
+                                    <td>{{ $post->id }}</td>
                                     <td>Gecko</td>
-                                    <td>Mozilla 1.7</td>
-                                    <td>Win 98+ / OSX.1+</td>
-                                    <td>1.7</td>
-                                    <td>A</td>
+                                    <td>{{ $post->judul }}</td>
+                                    <td>{{ $post->gambar }}</td>
+                                    <td>{{ $post->isi }}</td>
+                                    <td>{{ $post->like }}</td>
                                     <td>
                                         <a class="btn btn-primary btn-sm" href="#">
                                             <i class="fas fa-folder">
@@ -61,7 +67,10 @@
                                         </a>
                                     </td>
                                 </tr>
-
+                                @php
+                                $n = $n + 1
+                                @endphp
+                                @endforeach
                             </tbody>
 
                         </table>

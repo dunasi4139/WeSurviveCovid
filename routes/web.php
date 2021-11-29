@@ -118,5 +118,17 @@ Route::group(['prefix' => 'admin', 'as' => 'admin.'], function () {
 
     Route::group(['prefix' => '/saran', 'as' => 'suggestion.'], function () {
         Route::get('', [AdminSuggestionController::class, 'index'])->name('index');
+
+        Route::get('/form', [AdminSuggestionController::class, 'create'])->name('create');
+
+        Route::post('/form', [AdminSuggestionController::class, 'store'])->name('store');
+
+        Route::get('/{id}', [AdminSuggestionController::class, 'show'])->name('show');
+
+        Route::get('/form/{id}', [AdminSuggestionController::class, 'edit'])->name('edit');
+
+        Route::post('/form/{id}', [AdminSuggestionController::class, 'update'])->name('update');
+
+        Route::post('/hapus/{id}', [AdminSuggestionController::class, 'destroy'])->name('delete');
     });
 });
