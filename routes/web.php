@@ -92,5 +92,6 @@ Route::middleware('auth')->group(function () {
 
     Route::group(['prefix' => 'admin','as' => 'admin.'], function () {
         Route::get('/', [AdminController::class, 'index'])->middleware(['can:isAdmin'])->name('index');
+        Route::get('/article', [AdminController::class, 'article_index'])->middleware(['can:isAdmin'])->name('article_index');
     });
 });

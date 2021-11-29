@@ -18,6 +18,11 @@ class AdminController extends Controller
      */
     public function index()
     {
-        return view('pages.admin.index');
+        return view('admin.index');
+    }
+    
+    public function article_index()
+    {
+        return view('admin.article.index');
     }
 }
