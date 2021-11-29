@@ -1500,7 +1500,7 @@ a:focus {
   overflow: hidden;
 }
 
-.content {
+.contents {
   min-height: calc(100vh - 74.594px);
 }
 

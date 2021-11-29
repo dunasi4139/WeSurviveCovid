@@ -24,7 +24,7 @@
 </head>
 
 <body id="top">
-    <div class="content">
+    <div class="contents">
         <header>
             <nav class="navbar navbar-expand-lg navigation" id="navbar">
                 <div class="container">
