@@ -2,10 +2,13 @@
 
 use App\Http\Controllers\Admin\DashboardController;
 use App\Http\Controllers\Admin\AdminLoginController;
+use App\Http\Controllers\Admin\AdminUserController;
+use App\Http\Controllers\Admin\AdminPostController;
+use App\Http\Controllers\Admin\AdminArticleController;
+use App\Http\Controllers\Admin\AdminSuggestionController;
 use App\Http\Controllers\Auth\RegisterController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\ArticleController;
-use App\Http\Controllers\Auth\LoginController;
 use App\Http\Controllers\SuggestionController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\VaccineController;
@@ -25,8 +28,8 @@ use Illuminate\Support\Facades\Auth;
 |
 */
 
-Route::get('/test', function(){
-    return view('test');
+Route::get('/test', function () {
+    return view('admin.article.index');
 });
 
 
@@ -37,42 +40,42 @@ Auth::routes();
 Route::get('/register-dokter', [RegisterController::class, 'dokterIndex'])->name('register-dokter');
 
 //Menu
-Route::middleware('auth')->group(function () {   
+Route::middleware('auth')->group(function () {
     Route::get('/', [HomeController::class, 'move']);
     Route::get('beranda', [HomeController::class, 'index'])->name('homepage');
 
-    Route::group(['prefix' => 'profil','as' => 'profile.'], function () {  
+    Route::group(['prefix' => 'profil', 'as' => 'profile.'], function () {
         Route::get('', [ProfileController::class, 'index'])->name('index');
     });
 
-    Route::group(['prefix' => 'artikel','as' => 'article.'], function () {  
+    Route::group(['prefix' => 'artikel', 'as' => 'article.'], function () {
         Route::get('', [ArticleController::class, 'index'])->name('index');
-        
+
         Route::get('/form', [ArticleController::class, 'create'])->middleware(['can:isDokter'])->name('create');
 
         Route::post('/form', [ArticleController::class, 'store'])->middleware(['can:isDokter'])->name('store');
 
-        Route::get('/{id}', [ArticleController::class, 'show'])->name('show');   
-        
+        Route::get('/{id}', [ArticleController::class, 'show'])->name('show');
+
         Route::get('/form/{id}', [ArticleController::class, 'edit'])->middleware(['can:isDokter'])->name('edit');
-        
+
         Route::post('/form/{id}', [ArticleController::class, 'update'])->middleware(['can:isDokter'])->name('update');
 
         Route::post('/hapus/{id}', [ArticleController::class, 'destroy'])->middleware(['can:isDokter'])->name('delete');
     });
-    
 
-    Route::group(['prefix' => 'saran','as' => 'suggestion.'], function () {
+
+    Route::group(['prefix' => 'saran', 'as' => 'suggestion.'], function () {
         Route::get('', [SuggestionController::class, 'index'])->name('index');
 
         Route::get('/{id}', [SuggestionController::class, 'show'])->name('show');
     });
 
-    Route::group(['prefix' => 'vaksinasi','as' => 'vaccine.'], function () {
+    Route::group(['prefix' => 'vaksinasi', 'as' => 'vaccine.'], function () {
         Route::get('', [VaccineController::class, 'index'])->name('index');
     });
 
-    Route::group(['prefix' => 'post','as' => 'post.'], function () {
+    Route::group(['prefix' => 'post', 'as' => 'post.'], function () {
         Route::get('', [PostController::class, 'index'])->name('index');
 
         Route::get('/form', [PostController::class, 'create'])->middleware(['can:isMasyarakat'])->name('create');
@@ -88,20 +91,32 @@ Route::middleware('auth')->group(function () {
         Route::post('/hapus/{id}', [PostController::class, 'destroy'])->middleware(['can:isMasyarakat'])->name('delete');
     });
 
-    Route::group(['prefix' => 'post','as' => 'comment.'], function () {
+    Route::group(['prefix' => 'post', 'as' => 'comment.'], function () {
         Route::post('/{id}/komentar', [CommentController::class, 'store'])->name('store');
     });
 });
 
-Route::group(['prefix' => 'admin','as' => 'admin.'], function () {
+Route::group(['prefix' => 'admin', 'as' => 'admin.'], function () {
     Route::get('/login', [AdminLoginController::class, 'showAdminLoginForm'])->name('login');
 
     Route::post('/login', [AdminLoginController::class, 'login']);
 
     Route::get('/', [DashboardController::class, 'index'])->name('index');
-    Route::middleware('auth')->group(function () { 
 
-        
+    Route::group(['prefix' => '/user', 'as' => 'user.'], function () {
+        Route::get('', [AdminUserController::class, 'index'])->name('index');
 
-    });    
+    });
+
+    Route::group(['prefix' => '/post', 'as' => 'post.'], function () {
+        Route::get('', [AdminPostController::class, 'index'])->name('index');
+    });
+
+    Route::group(['prefix' => '/artikel', 'as' => 'article.'], function () {
+        Route::get('', [AdminArticleController::class, 'index'])->name('index');
+    });
+
+    Route::group(['prefix' => '/saran', 'as' => 'suggestion.'], function () {
+        Route::get('', [AdminSuggestionController::class, 'index'])->name('index');
+    });
 });
