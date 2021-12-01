@@ -30,7 +30,7 @@
                             ID
                         </th>
                         <th style="width: 10%">
-                            No. Izin Praktek    
+                            No. Izin Praktek
                         </th>
                         <th style="width: 20%">
                             Nama
@@ -48,24 +48,48 @@
                     </tr>
                 </thead>
                 <tbody>
+                    @php
+                    $n = 1
+                    @endphp
+                    @foreach($users as $user)
                     <tr>
+                        <td>{{ $n }}</td>
+                        <td>{{ $user->id }}</td>
                         <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
+                        <td>{{ $user->name }}</td>
+                        <td>{{ $user->email }}</td>
+                        <td class="text-center">
+                            @if($user->role_id == 0)
+                            <span class="badge bg-success">
+                                Admin
+                            </span>
+                            @elseif($user->role_id == 1)
+                            <span class="badge bg-warning">
+                                Masyarakat
+                            </span>
+                            @else
+                            <span class="badge bg-primary">
+                                Dokter
+                            </span>
+                            @endif
+                        </td>
+                        <td>{{ $user->created_at }}</td>
                         <td>
                         <td class="project-actions text-right">
-                            <a class="btn btn-primary btn-sm" href="#">
-                                <i class="fas fa-folder">
+                            @if($user->role_id == 0)
+                            <a class="btn btn-info btn-sm mx-2" href="">
+                                <i class="fas fa-pencil-alt">
                                 </i>
-                                Lihat
+                                Edit
                             </a>
+                            @endif
                         </td>
                         </td>
                     </tr>
+                    @php
+                    $n = $n + 1
+                    @endphp
+                    @endforeach
                 </tbody>
             </table>
         </div>

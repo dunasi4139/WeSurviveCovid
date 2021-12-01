@@ -101,34 +101,44 @@ Route::group(['prefix' => 'admin', 'as' => 'admin.'], function () {
 
     Route::post('/login', [AdminLoginController::class, 'login']);
 
-    Route::get('/', [DashboardController::class, 'index'])->name('index');
+    Route::middleware(['auth', 'can:isAdmin'])->group(function () {
 
-    Route::group(['prefix' => '/user', 'as' => 'user.'], function () {
-        Route::get('', [AdminUserController::class, 'index'])->name('index');
+        Route::get('/', [DashboardController::class, 'index'])->name('index');
 
-    });
+        Route::group(['prefix' => '/user', 'as' => 'user.'], function () {
+            Route::get('', [AdminUserController::class, 'index'])->name('index');
+        });
 
-    Route::group(['prefix' => '/post', 'as' => 'post.'], function () {
-        Route::get('', [AdminPostController::class, 'index'])->name('index');
-    });
+        Route::group(['prefix' => '/post', 'as' => 'post.'], function () {
+            Route::get('', [AdminPostController::class, 'index'])->name('index');
 
-    Route::group(['prefix' => '/artikel', 'as' => 'article.'], function () {
-        Route::get('', [AdminArticleController::class, 'index'])->name('index');
-    });
+            Route::get('/{id}', [AdminPostController::class, 'show'])->name('show');
 
-    Route::group(['prefix' => '/saran', 'as' => 'suggestion.'], function () {
-        Route::get('', [AdminSuggestionController::class, 'index'])->name('index');
+            Route::post('/hapus/{id}', [AdminPostController::class, 'destroy'])->name('delete');
+        });
 
-        Route::get('/form', [AdminSuggestionController::class, 'create'])->name('create');
+        Route::group(['prefix' => '/artikel', 'as' => 'article.'], function () {
+            Route::get('', [AdminArticleController::class, 'index'])->name('index');
 
-        Route::post('/form', [AdminSuggestionController::class, 'store'])->name('store');
+            Route::get('/{id}', [AdminArticleController::class, 'show'])->name('show');
 
-        Route::get('/{id}', [AdminSuggestionController::class, 'show'])->name('show');
+            Route::post('/hapus/{id}', [AdminArticleController::class, 'destroy'])->name('delete');
+        });
 
-        Route::get('/form/{id}', [AdminSuggestionController::class, 'edit'])->name('edit');
+        Route::group(['prefix' => '/saran', 'as' => 'suggestion.'], function () {
+            Route::get('', [AdminSuggestionController::class, 'index'])->name('index');
 
-        Route::post('/form/{id}', [AdminSuggestionController::class, 'update'])->name('update');
+            Route::get('/form', [AdminSuggestionController::class, 'create'])->name('create');
 
-        Route::post('/hapus/{id}', [AdminSuggestionController::class, 'destroy'])->name('delete');
+            Route::post('/form', [AdminSuggestionController::class, 'store'])->name('store');
+
+            Route::get('/{id}', [AdminSuggestionController::class, 'show'])->name('show');
+
+            Route::get('/form/{id}', [AdminSuggestionController::class, 'edit'])->name('edit');
+
+            Route::post('/form/{id}', [AdminSuggestionController::class, 'update'])->name('update');
+
+            Route::post('/hapus/{id}', [AdminSuggestionController::class, 'destroy'])->name('delete');
+        });
     });
 });

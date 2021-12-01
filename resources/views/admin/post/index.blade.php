@@ -33,6 +33,7 @@
                                     <th>Gambar</th>
                                     <th>Isi</th>
                                     <th>Like</th>
+                                    <th>created_at</th>
                                     <th></th>
                                 </tr>
                             </thead>
@@ -49,22 +50,23 @@
                                     <td>{{ $post->gambar }}</td>
                                     <td>{{ $post->isi }}</td>
                                     <td>{{ $post->like }}</td>
+                                    <td>{{ $post->created_at }}</td>
                                     <td>
-                                        <a class="btn btn-primary btn-sm" href="#">
-                                            <i class="fas fa-folder">
-                                            </i>
-                                            Lihat
-                                        </a>
-                                        <a class="btn btn-info btn-sm" href="#">
-                                            <i class="fas fa-pencil-alt">
-                                            </i>
-                                            Edit
-                                        </a>
-                                        <a class="btn btn-danger btn-sm" href="#">
-                                            <i class="fas fa-trash">
-                                            </i>
-                                            Hapus
-                                        </a>
+                                        <div class="d-flex">
+                                            <a class="btn btn-primary btn-sm mr-2" href="{{ route('admin.post.show', $post->id) }}">
+                                                <i class="fas fa-folder">
+                                                </i>
+                                                Lihat
+                                            </a>
+                                            <form method="POST" action="{{ route('admin.post.delete', $post->id) }}" onsubmit="return confirm('Anda yakin?');">
+                                                @csrf
+                                                <button class="btn btn-danger btn-sm" type="submit">
+                                                    <i class="fas fa-trash">
+                                                    </i>
+                                                    Hapus
+                                                </button>
+                                            </form>
+                                        </div>
                                     </td>
                                 </tr>
                                 @php

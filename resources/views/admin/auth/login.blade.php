@@ -1,7 +1,7 @@
 @extends('layouts.admin-auth')
 @section('content')
 <div class="card-body login-card-body">
-    <form method="POST" action="{{ route('login') }}">
+    <form method="POST" action="{{ url('/admin/login') }}">
         @csrf
         <div class="input-group mb-3">
             <input name="email" type="email" class="form-control" placeholder="Email">

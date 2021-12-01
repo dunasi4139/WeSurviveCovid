@@ -47,4 +47,9 @@ class User extends Authenticatable
     public function noDokter(){
         return $this->hasOne(Dokter::class, 'user_id');
     }
+
+    public static function count()
+    {
+        return User::where('role_id', '!=', 0)->count();
+    }
 }

@@ -28,40 +28,49 @@
                 <tr>
                   <th>No.</th>
                   <th>ID</th>
-                  <th>dokter_id</th>
-                  <th>Judul</th>
-                  <th>Gambar</th>
-                  <th>Isi</th>
+                  <th>user_id</th>
+                  <th style="width: 10%">Judul</th>
+                  <th style="width: 10%">Gambar</th>
+                  <th style="width: 40%">Isi</th>
+                  <th>crated_at</th>
                   <th></th>
                 </tr>
               </thead>
               <tbody>
+                @php
+                $n = 1
+                @endphp
+                @foreach($articles as $article)
                 <tr>
-                  <td></td>
-                  <td>Gecko</td>
-                  <td>Mozilla 1.7</td>
-                  <td>Win 98+ / OSX.1+</td>
-                  <td>1.7</td>
-                  <td>A</td>
+                  <td>{{ $n }}</td>
+                  <td>{{ $article->id }}</td>
+                  <td>{{ $article->user->id }}</td>
+                  <td>{{ $article->judul }}</td>
+                  <td>{{ $article->gambar }}</td>
+                  <td>{{ $article->isi }}</td>
+                  <td>{{ $article->created_at }}</td>
                   <td>
-                    <a class="btn btn-primary btn-sm" href="#">
-                      <i class="fas fa-folder">
-                      </i>
-                      Lihat
-                    </a>
-                    <a class="btn btn-info btn-sm" href="#">
-                      <i class="fas fa-pencil-alt">
-                      </i>
-                      Edit
-                    </a>
-                    <a class="btn btn-danger btn-sm" href="#">
-                      <i class="fas fa-trash">
-                      </i>
-                      Hapus
-                    </a>
+                    <div class="d-flex">
+                      <a class="btn btn-primary btn-sm mr-2" href="{{ route('admin.article.show', $article->id) }}">
+                        <i class="fas fa-folder">
+                        </i>
+                        Lihat
+                      </a>
+                      <form method="POST" action="{{ route('admin.article.delete', $article->id) }}" onsubmit="return confirm('Anda yakin?');">
+                        @csrf
+                        <button class="btn btn-danger btn-sm" type="submit">
+                          <i class="fas fa-trash">
+                          </i>
+                          Hapus
+                        </button>
+                      </form>
+                    </div>
                   </td>
                 </tr>
-
+                @php
+                $n = $n + 1
+                @endphp
+                @endforeach
               </tbody>
 
             </table>

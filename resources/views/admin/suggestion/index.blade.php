@@ -33,7 +33,8 @@
                   <th style="width: 5%">ID</th>
                   <th style="width: 10%">Judul</th>
                   <th style="width: 10%">Gambar</th>
-                  <th style="width: 40%">Isi</th>
+                  <th style="width: 35%">Isi</th>
+                  <th>created_at</th>
                   <th></th>
                 </tr>
               </thead>
@@ -48,6 +49,7 @@
                   <td>{{ $saran->judul }}</td>
                   <td>{{ $saran->gambar }}</td>
                   <td>{{ $saran->isi }}</td>
+                  <td>{{ $saran->created_at }}</td>
                   <td>
                     <div class="d-flex">
                       <a class="btn btn-primary btn-sm" href="{{ route('admin.suggestion.show', $saran->id) }}">

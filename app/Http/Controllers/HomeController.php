@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class HomeController extends Controller
 {
@@ -28,6 +29,10 @@ class HomeController extends Controller
 
     public function move()
     {
-        return redirect()->route('homepage');
+        if (Auth::user()->role_id != 0) {
+            return redirect()->route('homepage');
+        } else {
+            return redirect()->route('admin.index');
+        }
     }
 }
