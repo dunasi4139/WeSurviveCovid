@@ -50,7 +50,7 @@ class PostController extends Controller
             'user_id' => Auth::id(),
             'judul' => $request->title,
             'isi' => $request->content,
-            'gambar' => "/images/blog/default.jpg",
+            'gambar' => "/images/posts/dummy-01.jpeg",
             'like' => 0
         ]);
 

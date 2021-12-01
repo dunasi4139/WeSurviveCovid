@@ -20,7 +20,8 @@ class DatabaseSeeder extends Seeder
             ArtikelSeeder::class,
             VaksinasiSeeder::class,   
             ProvinceSeeder::class,  
-            SaranSeeder::class,      
+            SaranSeeder::class,
+            PostSeeder::class,      
         ]);
     }
 }

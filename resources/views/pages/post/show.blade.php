@@ -19,7 +19,6 @@
 </section>
 
 
-
 <section class="section blog-wrap">
     <div class="container">
         <div class="row">
@@ -27,7 +26,7 @@
                 <div class="row">
                     <div class="col-lg-12 mb-5">
                         <div class="single-blog-item">
-                            <img src="{{ $post->gambar }}" alt="" class="image">
+                            <img src="{{ asset( $post->gambar) }}" alt="" class="image">
 
                             <div class="blog-item-content mt-5">
                                 <div class="blog-item-meta mb-3">
