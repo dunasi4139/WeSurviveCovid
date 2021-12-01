@@ -45,7 +45,7 @@
                                 <tr>
                                     <td>{{ $n }}</td>
                                     <td>{{ $post->id }}</td>
-                                    <td>Gecko</td>
+                                    <td>{{ $post->user->id }}</td>
                                     <td>{{ $post->judul }}</td>
                                     <td>{{ $post->gambar }}</td>
                                     <td>{{ $post->isi }}</td>

@@ -44,7 +44,6 @@
                         <th style="width: 20%">
                             created_at
                         </th>
-                        <th></th>
                     </tr>
                 </thead>
                 <tbody>
@@ -55,7 +54,13 @@
                     <tr>
                         <td>{{ $n }}</td>
                         <td>{{ $user->id }}</td>
-                        <td></td>
+                        <td>
+                            @if($user->role_id == 2)
+                            {{ $user->noDokter->no_dokter }}
+                            @else
+                            -
+                            @endif
+                        </td>
                         <td>{{ $user->name }}</td>
                         <td>{{ $user->email }}</td>
                         <td class="text-center">
@@ -74,17 +79,7 @@
                             @endif
                         </td>
                         <td>{{ $user->created_at }}</td>
-                        <td>
-                        <td class="project-actions text-right">
-                            @if($user->role_id == 0)
-                            <a class="btn btn-info btn-sm mx-2" href="">
-                                <i class="fas fa-pencil-alt">
-                                </i>
-                                Edit
-                            </a>
-                            @endif
-                        </td>
-                        </td>
+                        
                     </tr>
                     @php
                     $n = $n + 1

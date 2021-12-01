@@ -27,9 +27,9 @@
             <p>Postingan Pengalaman</p>
           </div>
           <div class="icon">
-            <i class="ion ion-bag"></i>
+            <i class="ion ion-stats-bars"></i>
           </div>
-          <a href="#" class="small-box-footer">{{ trans('global.more') }} <i class="fas fa-arrow-circle-right"></i></a>
+          <a href="{{ route('admin.post.index') }}" class="small-box-footer">{{ trans('global.more') }} <i class="fas fa-arrow-circle-right"></i></a>
         </div>
       </div>
       <!-- ./col -->
@@ -44,7 +44,7 @@
           <div class="icon">
             <i class="ion ion-stats-bars"></i>
           </div>
-          <a href="#" class="small-box-footer">{{ trans('global.more') }} <i class="fas fa-arrow-circle-right"></i></a>
+          <a href="{{ route('admin.article.index') }}" class="small-box-footer">{{ trans('global.more') }} <i class="fas fa-arrow-circle-right"></i></a>
         </div>
       </div>
       <!-- ./col -->
@@ -74,7 +74,7 @@
           <div class="icon">
             <i class="ion ion-pie-graph"></i>
           </div>
-          <a href="#" class="small-box-footer">{{ trans('global.more') }} <i class="fas fa-arrow-circle-right"></i></a>
+          <a href="{{ route('admin.suggestion.index') }}" class="small-box-footer">{{ trans('global.more') }} <i class="fas fa-arrow-circle-right"></i></a>
         </div>
       </div>
       <!-- ./col -->
