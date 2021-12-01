@@ -6,6 +6,7 @@ use App\Http\Controllers\Admin\AdminUserController;
 use App\Http\Controllers\Admin\AdminPostController;
 use App\Http\Controllers\Admin\AdminArticleController;
 use App\Http\Controllers\Admin\AdminSuggestionController;
+use App\Http\Controllers\Admin\AdminVaccineController;
 use App\Http\Controllers\Auth\RegisterController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\ArticleController;
@@ -139,6 +140,22 @@ Route::group(['prefix' => 'admin', 'as' => 'admin.'], function () {
             Route::post('/form/{id}', [AdminSuggestionController::class, 'update'])->name('update');
 
             Route::post('/hapus/{id}', [AdminSuggestionController::class, 'destroy'])->name('delete');
+        });
+
+        Route::group(['prefix' => '/vaksinasi', 'as' => 'vaccine.'], function () {
+            Route::get('', [AdminVaccineController::class, 'index'])->name('index');
+
+            Route::get('/form', [AdminVaccineController::class, 'create'])->name('create');
+
+            Route::post('/form', [AdminVaccineController::class, 'store'])->name('store');
+
+            Route::get('/{id}', [AdminVaccineController::class, 'show'])->name('show');
+
+            Route::get('/form/{id}', [AdminVaccineController::class, 'edit'])->name('edit');
+
+            Route::post('/form/{id}', [AdminVaccineController::class, 'update'])->name('update');
+
+            Route::post('/hapus/{id}', [AdminVaccineController::class, 'destroy'])->name('delete');
         });
     });
 });

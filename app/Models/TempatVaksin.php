@@ -17,7 +17,12 @@ class TempatVaksin extends Model
         'syarat',
         'alamat',
         'jenis',
-        'province_id'
+        'province_id',
+        'gambar'
     ];
+
+    public function province() {
+        return $this->belongsTo(Province::class, 'province_id');
+    }
 
 }

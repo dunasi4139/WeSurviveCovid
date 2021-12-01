@@ -107,6 +107,14 @@
               </a>
             </li>
             <li class="nav-item">
+              <a href="{{ route('admin.vaccine.index') }}" class="nav-link">
+                <i class="nav-icon fas fa-columns"></i>
+                <p>
+                  Vaksinasi
+                </p>
+              </a>
+            </li>
+            <li class="nav-item">
               <a href="{{ route('logout') }}" onclick="event.preventDefault();
                                       document.getElementById('logout-form').submit();" class="nav-link">
                 <i class="nav-icon far fa-circle text-danger"></i>

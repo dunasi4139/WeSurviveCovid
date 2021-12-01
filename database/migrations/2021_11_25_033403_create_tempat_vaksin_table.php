@@ -20,6 +20,7 @@ class CreateTempatVaksinTable extends Migration
             $table->string('jadwal');
             $table->string('alamat');
             $table->string('jenis');
+            $table->string('gambar');
             $table->integer('province_id');
             $table->timestamps();
         });
