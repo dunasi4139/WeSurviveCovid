@@ -41,6 +41,7 @@
     </div>
 </section>
 
+@if($user->role_id != 0)
 <section class="section doctor-qualification pt-0">
     <div class="container">
         <div class="row">
@@ -89,4 +90,5 @@
 
     </div>
 </section>
+@endif
 @endsection

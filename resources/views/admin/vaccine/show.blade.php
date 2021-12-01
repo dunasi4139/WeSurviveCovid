@@ -27,7 +27,7 @@
                     <div class="card-body">
                         <div class="form-group">
                             <label for="inputName">Tempat</label>
-                            <p class="">{{ $vaccine->judul }}</p>
+                            <p class="">{{ $vaccine->nama }}</p>
                         </div>
                         <div class="form-group">
                             <label for="inputDescription">Provinsi</label>
