@@ -15,7 +15,7 @@ class AdminSuggestionController extends Controller
      */
     public function index()
     {
-        $sarans = Suggestion::all();
+        $sarans = Suggestion::paginate(8);
         return view('admin.suggestion.index', compact('sarans'));
     }
 

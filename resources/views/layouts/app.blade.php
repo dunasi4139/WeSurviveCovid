@@ -69,6 +69,12 @@
                             </li>
                             @endcan
 
+                            @can('isAdmin')
+                            <li class="nav-item active">
+                                <a style="cursor: pointer" href="{{ route('post.index') }}" class="nav-link">{{ trans('global.nav.post') }}</a>
+                            </li>
+                            @endcan
+
                             @can('isDokter')
                             <li class="nav-item dropdown">
                                 <a style="cursor: pointer" class="nav-link">{{ trans('global.nav.article') }}</a>
@@ -80,6 +86,12 @@
                             @endcan
 
                             @can('isMasyarakat')
+                            <li class="nav-item active">
+                                <a style="cursor: pointer" href="{{ route('article.index') }}" class="nav-link">{{ trans('global.nav.article') }}</a>
+                            </li>
+                            @endcan
+
+                            @can('isAdmin')
                             <li class="nav-item active">
                                 <a style="cursor: pointer" href="{{ route('article.index') }}" class="nav-link">{{ trans('global.nav.article') }}</a>
                             </li>
@@ -99,6 +111,9 @@
                                 </a>
                                 <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
                                     <li><a class="dropdown-item" href="{{ route('profile.index') }}">Profile</a></li>
+                                    @can('isAdmin')
+                                    <li><a class="dropdown-item" href="{{ route('admin.index') }}">Admin</a></li>
+                                    @endcan
                                     <li>
                                         <a style="cursor: pointer" class="dropdown-item" href="{{ route('logout') }}" onclick="event.preventDefault();
                                       document.getElementById('logout-form').submit();">
