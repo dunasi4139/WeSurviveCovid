@@ -34,7 +34,7 @@
                 <div class="row mb-5">
                     <div class="col-lg-4 col-md-6">
                         <div class="doctor-img-block">
-                            <img src="images/team/1.jpg" alt="" class="img-fluid w-100">
+                            <img src="{{ $d->gambar }}" style="height: 350px; width: 350px;" alt="" class="img-fluid w-100">
                         </div>
                     </div>
 

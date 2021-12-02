@@ -64,7 +64,7 @@ class AdminVaccineController extends Controller
         if ($request->hasFile('image')) {
             $file = $request->file('image');
             $nama_file = "_" . time() . "_" . $file->getClientOriginalName();
-            $tujuan_upload = 'images/suggestions/';
+            $tujuan_upload = 'images/vaccines/';
             $file->move($tujuan_upload, $nama_file);
             $image = $request->file('image');
 

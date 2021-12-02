@@ -24,7 +24,7 @@
             @foreach($suggestions as $suggestion)
             <div class="col-lg-4 col-md-6 ">
                 <div class="department-block mb-5">
-                    <img src="images/service/service-1.jpg" alt="" class="img-fluid w-100">
+                    <img src="{{ $suggestion->gambar }}" style="height: 252px; width: 350px;" alt="" class="img-fluid w-100">
                     <div class="content">
                         <h4 class="mt-4 mb-2 title-color">{{ $suggestion->judul }}</h4>
                         <p class="mb-4 ellipsis">{{ $suggestion->isi }}</p>

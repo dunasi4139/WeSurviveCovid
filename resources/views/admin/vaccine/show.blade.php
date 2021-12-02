@@ -51,7 +51,9 @@
                         </div>
                         <div class="form-group">
                             <label for="inputDescription">Gambar</label>
-                            <img src="{{ $vaccine->gambar }}" alt="">
+                        </div>
+                        <div class="form-group">
+                            <img style="max-width:750px; height:auto;" src="{{ asset( $vaccine->gambar) }}" alt="">
                         </div>
                     </div>
                     <!-- /.card-body -->

@@ -35,7 +35,9 @@
                         </div>
                         <div class="form-group">
                             <label for="inputDescription">Gambar</label>
-                            <img src="{{ $saran->gambar }}" alt="">
+                        </div>
+                        <div class="form-group">
+                            <img style="max-width:750px; height:auto;" src="{{ asset( $saran->gambar) }}" alt="">
                         </div>
 
                     </div>

@@ -49,7 +49,6 @@ class ArticleController extends Controller
             'dokter_id' => Auth::id(),
             'judul' => $request->title,
             'isi' => $request->content,
-            'gambar' => "/images/blog/default.jpg"
         ]);
 
         $id = Article::latest()->first();
