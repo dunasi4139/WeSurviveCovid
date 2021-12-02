@@ -31,6 +31,7 @@
 
                             <div class="blog-item-content">
                                 <div class="blog-item-meta mb-3 mt-4">
+                                    <span class="text-black text-capitalize mr-3"><i class="icofont-thumbs-up"></i>{{ $post->like }}</span>
                                     <span class="text-muted text-capitalize mr-3"><i class="icofont-comment mr-2"></i>{{ $post->count($post->id) }} komentar</span>
                                     <span class="text-black text-capitalize mr-3"><i class="icofont-calendar mr-1"></i>{{ $post->created_at->isoFormat('dddd, D MMMM Y H:i') }}</span>
                                 </div>

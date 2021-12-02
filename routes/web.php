@@ -95,6 +95,9 @@ Route::middleware('auth')->group(function () {
     Route::group(['prefix' => 'post', 'as' => 'comment.'], function () {
         Route::post('/{id}/komentar', [CommentController::class, 'store'])->name('store');
     });
+    Route::group(['prefix' => 'post', 'as' => 'like.'], function () {
+        Route::get('/{id}/like', [PostController::class, 'like'])->name('like');
+    });
 });
 
 Route::group(['prefix' => 'admin', 'as' => 'admin.'], function () {

@@ -30,6 +30,7 @@
 
                             <div class="blog-item-content mt-5">
                                 <div class="blog-item-meta mb-3">
+                                    <span class="text-black text-capitalize mr-3"><i class="icofont-thumbs-up"></i>{{ $post->like }}</span>
                                     <span class="text-black text-capitalize mr-3"><i class="icofont-calendar mr-2"></i>{{ $post->created_at }}</span>
                                 </div>
 
@@ -39,11 +40,16 @@
 
                             </div>
 
-                            @can('isMasyarakat')
+                            {{-- @can('isMasyarakat') --}}
                             @if($post->user_id == $user->id)
                             <a href="{{ route('post.edit', $post->id) }}" class="btn btn-main-2 btn-round-full mt-3">Edit<i class="icofont-simple-right ml-2"></i></a>
+                            @else
+                                <div class="col-lg-12">
+                                    <a href="{{ route('like.like', [$post->id]) }}">                                 
+                                            <span class="text-black text-capitalize mr-3"><i class="icofont-thumbs-up"></i></span> Like
+                                    </a>
+                                </div>
                             @endif
-                            @endcan
                         </div>
                     </div>
 

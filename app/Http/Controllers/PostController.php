@@ -131,4 +131,13 @@ class PostController extends Controller
 
         return back();
     }
+
+    public function like($id)
+    {
+        $post = Post::find($id);
+        $post->like = ($post->like)+1 ;
+        $post->save();
+
+        return redirect()->route('post.show', [$id]);
+    }
 }
