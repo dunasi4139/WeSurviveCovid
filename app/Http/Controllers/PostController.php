@@ -7,6 +7,7 @@ use Illuminate\Support\Facades\Auth;
 use App\Models\Post;
 use App\Models\Comment;
 use App\Models\User;
+use App\Models\Like;
 
 class PostController extends Controller
 {
@@ -79,8 +80,10 @@ class PostController extends Controller
         $user = User::find(Auth::id());
         $post = Post::find($id);
         $comments = Comment::where('post_id', $id)->orderBy('created_at')->get();
+        $likes = Like::where('post_id', $id)->get();
+        $myLike = Like::where(['user_id' => Auth::id(), 'post_id' => $id])->get();
 
-        return view('pages.post.show', compact('post', 'user', 'comments'));
+        return view('pages.post.show', compact('post', 'user', 'comments', 'likes', 'myLike'));
     }
 
     /**
@@ -134,6 +137,11 @@ class PostController extends Controller
 
     public function like($id)
     {
+        Like::create([
+            'user_id' => Auth::id(),
+            'post_id'=> $id
+        ]);
+
         $post = Post::find($id);
         $post->like = ($post->like)+1 ;
         $post->save();
