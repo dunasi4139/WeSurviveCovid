@@ -52,4 +52,8 @@ class User extends Authenticatable
     {
         return User::where('role_id', '!=', 0)->count();
     }
+
+    public function like() {
+        return $this->hasMany(Like::class, 'user_id');
+    }
 }
