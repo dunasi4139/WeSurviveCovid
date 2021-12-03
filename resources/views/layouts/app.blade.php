@@ -97,14 +97,14 @@
                             </li>
                             @endcan
                             
-                            @can('isMasyarakat')
+                            @if(Auth::user()->role_id != 2)
                             <li class="nav-item">
                                 <a style="cursor: pointer" href="{{ route('suggestion.index') }}" class="nav-link">{{ trans('global.nav.suggestion') }}</a>
                             </li>
                             <li class="nav-item">
                                 <a style="cursor: pointer" href="{{ route('vaccine.index') }}" class="nav-link">{{ trans('global.nav.vaccine') }}</a>
                             </li>
-                            @endcan
+                            @endif
                             <li class="nav-item dropdown">
                                 <a style="cursor: pointer" class="nav-link">
                                     <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" class="bi bi-person-fill" viewBox="0 0 16 16">

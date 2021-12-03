@@ -22,7 +22,7 @@
         <div class="row">
             <div class="col-lg-4 col-md-6">
                 <div class="doctor-img-block">
-                    <img src="images/team/1.jpg" alt="" class="img-fluid w-100">
+                    <img src="images/team/1.png" alt="" class="img-fluid w-100">
                 </div>
             </div>
 
@@ -58,9 +58,9 @@
             @foreach($contents as $content)
             <div class="col-lg-4 col-md-6 col-sm-6">
                 <div class="service-block mb-5">
-                    <img src="images/service/service-1.jpg" alt="" class="img-fluid">
+                    <img src="{{ asset($content->gambar) }}" alt="" class="img-fluid">
                     <div class="content">
-                        <h4 class="mt-4 mb-2 title-color">{{ $content->judul }}</h4>
+                        <h4 class="mt-4 mb-2 title-color" style="-webkit-line-clamp: 1;">{{ $content->judul }}</h4>
                         <p class="mb-4 ellipsis text-break">{{ $content->isi }}</p>
                     </div>
                     @if($user->role_id == 2)

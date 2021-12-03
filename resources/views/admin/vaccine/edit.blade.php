@@ -54,10 +54,6 @@
                                 <label for="syarat">Syarat</label>
                                 <textarea name="syarat" style="height: 200px" id="syarat" class="form-control" rows="4">{{ $vaccine->syarat }}</textarea>
                             </div>
-                            <div class="form-group">
-                                <label for="inputDescription">Gambar</label>
-                                <input name="image" type="file" name="image">
-                            </div>
 
                         </div>
                         <!-- /.card-body -->

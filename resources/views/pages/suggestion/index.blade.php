@@ -26,7 +26,7 @@
                 <div class="department-block mb-5">
                     <img src="{{ $suggestion->gambar }}" style="height: 252px; width: 350px;" alt="" class="img-fluid w-100">
                     <div class="content">
-                        <h4 class="mt-4 mb-2 title-color">{{ $suggestion->judul }}</h4>
+                        <h4 class="mt-4 mb-2 title-color ellipsis" style="-webkit-line-clamp: 1;">{{ $suggestion->judul }}</h4>
                         <p class="mb-4 ellipsis">{{ $suggestion->isi }}</p>
                         <a href="{{ route('suggestion.show', $suggestion->id) }}" class="read-more">{{ trans('global.more') }}<i class="icofont-simple-right ml-2"></i></a>
                     </div>

@@ -109,7 +109,25 @@ class AdminVaccineController extends Controller
      */
     public function update(Request $request, $id)
     {
-        
+        $this->validate($request, [
+            'title' => ['required', 'string'],
+            'alamat' => ['required', 'string'],
+            'jadwal' => ['required', 'string'],
+            'jenis' => ['required', 'string'],
+            'syarat' => ['required', 'string'],
+            'province' => ['required'],
+        ]);
+
+        $vaccine = TempatVaksin::find($id);
+        $vaccine->nama = $request->input('title');
+        $vaccine->alamat = $request->input('alamat');
+        $vaccine->jadwal = $request->input('jadwal');
+        $vaccine->jenis = $request->input('jenis');
+        $vaccine->syarat = $request->input('syarat');
+        $vaccine->province_id = $request->input('province');
+        $vaccine->save();
+
+        return view('admin.vaccine.show', compact('vaccine'));
     }
 
     /**
